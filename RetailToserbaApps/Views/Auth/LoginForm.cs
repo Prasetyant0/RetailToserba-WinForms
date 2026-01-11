@@ -22,7 +22,12 @@ namespace RetailToserbaApps.Views
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue500, Primary.Blue700, Primary.BlueGrey500, Accent.LightBlue400, TextShade.WHITE);
+
+            lbl1.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            
         }
+
+        
     }
 }
