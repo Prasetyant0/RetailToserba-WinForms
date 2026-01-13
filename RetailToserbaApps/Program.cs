@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RetailToserbaApps.Views;
+using RetailToserbaApps.Views.Dashboard;
+using RetailToserbaApps.Views.Pages;
 
 namespace RetailToserbaApps
 {
@@ -17,7 +19,7 @@ namespace RetailToserbaApps
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new TransactionHistoryForm());
         }
     }
 }
