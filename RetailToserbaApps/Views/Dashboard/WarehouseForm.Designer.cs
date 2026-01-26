@@ -56,21 +56,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblWhDashboard = new System.Windows.Forms.Label();
             this.tabSupplers = new System.Windows.Forms.TabPage();
+            this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
+            this.lvwSupplier = new MaterialSkin.Controls.MaterialListView();
+            this.cmbCityRegion = new MaterialSkin.Controls.MaterialComboBox();
+            this.txtSearchSupplier = new MaterialSkin.Controls.MaterialTextBox();
+            this.lblSupplier = new System.Windows.Forms.Label();
             this.tabCategories = new System.Windows.Forms.TabPage();
+            this.materialButton7 = new MaterialSkin.Controls.MaterialButton();
+            this.materialListView2 = new MaterialSkin.Controls.MaterialListView();
+            this.lblProd = new System.Windows.Forms.Label();
             this.tabStockIn = new System.Windows.Forms.TabPage();
+            this.materialListView3 = new MaterialSkin.Controls.MaterialListView();
+            this.lblStockHistory = new System.Windows.Forms.Label();
+            this.materialButton8 = new MaterialSkin.Controls.MaterialButton();
             this.tabLogout = new System.Windows.Forms.TabPage();
             this.imageListWh = new System.Windows.Forms.ImageList(this.components);
-            this.lblSupplier = new System.Windows.Forms.Label();
-            this.txtSearchSupplier = new MaterialSkin.Controls.MaterialTextBox();
-            this.cmbCityRegion = new MaterialSkin.Controls.MaterialComboBox();
-            this.lvwSupplier = new MaterialSkin.Controls.MaterialListView();
-            this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
-            this.lblProd = new System.Windows.Forms.Label();
-            this.materialListView2 = new MaterialSkin.Controls.MaterialListView();
-            this.materialButton7 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton8 = new MaterialSkin.Controls.MaterialButton();
-            this.lblStockHistory = new System.Windows.Forms.Label();
-            this.materialListView3 = new MaterialSkin.Controls.MaterialListView();
             this.tabContWh.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.materialCard2.SuspendLayout();
@@ -449,82 +449,48 @@
             this.tabSupplers.Location = new System.Drawing.Point(4, 39);
             this.tabSupplers.Name = "tabSupplers";
             this.tabSupplers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSupplers.Size = new System.Drawing.Size(1906, 970);
+            this.tabSupplers.Size = new System.Drawing.Size(1542, 774);
             this.tabSupplers.TabIndex = 1;
             this.tabSupplers.Text = "Suppliers";
             this.tabSupplers.UseVisualStyleBackColor = true;
             // 
-            // tabCategories
+            // materialButton6
             // 
-            this.tabCategories.Controls.Add(this.materialButton7);
-            this.tabCategories.Controls.Add(this.materialListView2);
-            this.tabCategories.Controls.Add(this.lblProd);
-            this.tabCategories.ImageKey = "icons8-categories-32.png";
-            this.tabCategories.Location = new System.Drawing.Point(4, 39);
-            this.tabCategories.Name = "tabCategories";
-            this.tabCategories.Size = new System.Drawing.Size(1906, 970);
-            this.tabCategories.TabIndex = 2;
-            this.tabCategories.Text = "Categories";
-            this.tabCategories.UseVisualStyleBackColor = true;
+            this.materialButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton6.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton6.Depth = 0;
+            this.materialButton6.HighEmphasis = true;
+            this.materialButton6.Icon = null;
+            this.materialButton6.Location = new System.Drawing.Point(1582, 53);
+            this.materialButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton6.Name = "materialButton6";
+            this.materialButton6.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton6.Size = new System.Drawing.Size(157, 36);
+            this.materialButton6.TabIndex = 4;
+            this.materialButton6.Text = "Add New Supplier";
+            this.materialButton6.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton6.UseAccentColor = false;
+            this.materialButton6.UseVisualStyleBackColor = true;
             // 
-            // tabStockIn
+            // lvwSupplier
             // 
-            this.tabStockIn.Controls.Add(this.materialListView3);
-            this.tabStockIn.Controls.Add(this.lblStockHistory);
-            this.tabStockIn.Controls.Add(this.materialButton8);
-            this.tabStockIn.ImageKey = "stock.png";
-            this.tabStockIn.Location = new System.Drawing.Point(4, 39);
-            this.tabStockIn.Name = "tabStockIn";
-            this.tabStockIn.Size = new System.Drawing.Size(1906, 970);
-            this.tabStockIn.TabIndex = 3;
-            this.tabStockIn.Text = "Stock In";
-            this.tabStockIn.UseVisualStyleBackColor = true;
-            // 
-            // tabLogout
-            // 
-            this.tabLogout.ImageKey = "icons8-logout-32.png";
-            this.tabLogout.Location = new System.Drawing.Point(4, 39);
-            this.tabLogout.Name = "tabLogout";
-            this.tabLogout.Size = new System.Drawing.Size(1906, 970);
-            this.tabLogout.TabIndex = 4;
-            this.tabLogout.Text = "Logout";
-            this.tabLogout.UseVisualStyleBackColor = true;
-            // 
-            // imageListWh
-            // 
-            this.imageListWh.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListWh.ImageStream")));
-            this.imageListWh.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListWh.Images.SetKeyName(0, "dashboard.png");
-            this.imageListWh.Images.SetKeyName(1, "stock.png");
-            this.imageListWh.Images.SetKeyName(2, "icons8-categories-32.png");
-            this.imageListWh.Images.SetKeyName(3, "icons8-logout-32.png");
-            this.imageListWh.Images.SetKeyName(4, "icons8-supplier-32.png");
-            // 
-            // lblSupplier
-            // 
-            this.lblSupplier.AutoSize = true;
-            this.lblSupplier.Location = new System.Drawing.Point(102, 42);
-            this.lblSupplier.Name = "lblSupplier";
-            this.lblSupplier.Size = new System.Drawing.Size(110, 13);
-            this.lblSupplier.TabIndex = 0;
-            this.lblSupplier.Text = "Supplier Management";
-            // 
-            // txtSearchSupplier
-            // 
-            this.txtSearchSupplier.AnimateReadOnly = false;
-            this.txtSearchSupplier.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearchSupplier.Depth = 0;
-            this.txtSearchSupplier.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtSearchSupplier.LeadingIcon = null;
-            this.txtSearchSupplier.Location = new System.Drawing.Point(105, 109);
-            this.txtSearchSupplier.MaxLength = 50;
-            this.txtSearchSupplier.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtSearchSupplier.Multiline = false;
-            this.txtSearchSupplier.Name = "txtSearchSupplier";
-            this.txtSearchSupplier.Size = new System.Drawing.Size(1391, 50);
-            this.txtSearchSupplier.TabIndex = 1;
-            this.txtSearchSupplier.Text = "";
-            this.txtSearchSupplier.TrailingIcon = null;
+            this.lvwSupplier.AutoSizeTable = false;
+            this.lvwSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lvwSupplier.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvwSupplier.Depth = 0;
+            this.lvwSupplier.FullRowSelect = true;
+            this.lvwSupplier.HideSelection = false;
+            this.lvwSupplier.Location = new System.Drawing.Point(105, 186);
+            this.lvwSupplier.MinimumSize = new System.Drawing.Size(200, 100);
+            this.lvwSupplier.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.lvwSupplier.MouseState = MaterialSkin.MouseState.OUT;
+            this.lvwSupplier.Name = "lvwSupplier";
+            this.lvwSupplier.OwnerDraw = true;
+            this.lvwSupplier.Size = new System.Drawing.Size(1634, 392);
+            this.lvwSupplier.TabIndex = 3;
+            this.lvwSupplier.UseCompatibleStateImageBehavior = false;
+            this.lvwSupplier.View = System.Windows.Forms.View.Details;
             // 
             // cmbCityRegion
             // 
@@ -548,71 +514,44 @@
             this.cmbCityRegion.StartIndex = 0;
             this.cmbCityRegion.TabIndex = 2;
             // 
-            // lvwSupplier
+            // txtSearchSupplier
             // 
-            this.lvwSupplier.AutoSizeTable = false;
-            this.lvwSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lvwSupplier.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lvwSupplier.Depth = 0;
-            this.lvwSupplier.FullRowSelect = true;
-            this.lvwSupplier.HideSelection = false;
-            this.lvwSupplier.Location = new System.Drawing.Point(105, 186);
-            this.lvwSupplier.MinimumSize = new System.Drawing.Size(200, 100);
-            this.lvwSupplier.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.lvwSupplier.MouseState = MaterialSkin.MouseState.OUT;
-            this.lvwSupplier.Name = "lvwSupplier";
-            this.lvwSupplier.OwnerDraw = true;
-            this.lvwSupplier.Size = new System.Drawing.Size(1634, 392);
-            this.lvwSupplier.TabIndex = 3;
-            this.lvwSupplier.UseCompatibleStateImageBehavior = false;
-            this.lvwSupplier.View = System.Windows.Forms.View.Details;
+            this.txtSearchSupplier.AnimateReadOnly = false;
+            this.txtSearchSupplier.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearchSupplier.Depth = 0;
+            this.txtSearchSupplier.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSearchSupplier.LeadingIcon = null;
+            this.txtSearchSupplier.Location = new System.Drawing.Point(105, 109);
+            this.txtSearchSupplier.MaxLength = 50;
+            this.txtSearchSupplier.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtSearchSupplier.Multiline = false;
+            this.txtSearchSupplier.Name = "txtSearchSupplier";
+            this.txtSearchSupplier.Size = new System.Drawing.Size(1391, 50);
+            this.txtSearchSupplier.TabIndex = 1;
+            this.txtSearchSupplier.Text = "";
+            this.txtSearchSupplier.TrailingIcon = null;
             // 
-            // materialButton6
+            // lblSupplier
             // 
-            this.materialButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton6.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton6.Depth = 0;
-            this.materialButton6.HighEmphasis = true;
-            this.materialButton6.Icon = null;
-            this.materialButton6.Location = new System.Drawing.Point(1582, 53);
-            this.materialButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton6.Name = "materialButton6";
-            this.materialButton6.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton6.Size = new System.Drawing.Size(157, 36);
-            this.materialButton6.TabIndex = 4;
-            this.materialButton6.Text = "Add New Supplier";
-            this.materialButton6.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton6.UseAccentColor = false;
-            this.materialButton6.UseVisualStyleBackColor = true;
+            this.lblSupplier.AutoSize = true;
+            this.lblSupplier.Location = new System.Drawing.Point(102, 42);
+            this.lblSupplier.Name = "lblSupplier";
+            this.lblSupplier.Size = new System.Drawing.Size(110, 13);
+            this.lblSupplier.TabIndex = 0;
+            this.lblSupplier.Text = "Supplier Management";
             // 
-            // lblProd
+            // tabCategories
             // 
-            this.lblProd.AutoSize = true;
-            this.lblProd.Location = new System.Drawing.Point(102, 42);
-            this.lblProd.Name = "lblProd";
-            this.lblProd.Size = new System.Drawing.Size(97, 13);
-            this.lblProd.TabIndex = 0;
-            this.lblProd.Text = "Product Categories";
-            // 
-            // materialListView2
-            // 
-            this.materialListView2.AutoSizeTable = false;
-            this.materialListView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialListView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView2.Depth = 0;
-            this.materialListView2.FullRowSelect = true;
-            this.materialListView2.HideSelection = false;
-            this.materialListView2.Location = new System.Drawing.Point(105, 115);
-            this.materialListView2.MinimumSize = new System.Drawing.Size(200, 100);
-            this.materialListView2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView2.Name = "materialListView2";
-            this.materialListView2.OwnerDraw = true;
-            this.materialListView2.Size = new System.Drawing.Size(1635, 498);
-            this.materialListView2.TabIndex = 1;
-            this.materialListView2.UseCompatibleStateImageBehavior = false;
-            this.materialListView2.View = System.Windows.Forms.View.Details;
+            this.tabCategories.Controls.Add(this.materialButton7);
+            this.tabCategories.Controls.Add(this.materialListView2);
+            this.tabCategories.Controls.Add(this.lblProd);
+            this.tabCategories.ImageKey = "icons8-categories-32.png";
+            this.tabCategories.Location = new System.Drawing.Point(4, 39);
+            this.tabCategories.Name = "tabCategories";
+            this.tabCategories.Size = new System.Drawing.Size(1906, 970);
+            this.tabCategories.TabIndex = 2;
+            this.tabCategories.Text = "Categories";
+            this.tabCategories.UseVisualStyleBackColor = true;
             // 
             // materialButton7
             // 
@@ -633,33 +572,46 @@
             this.materialButton7.UseAccentColor = false;
             this.materialButton7.UseVisualStyleBackColor = true;
             // 
-            // materialButton8
+            // materialListView2
             // 
-            this.materialButton8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton8.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton8.Depth = 0;
-            this.materialButton8.HighEmphasis = true;
-            this.materialButton8.Icon = null;
-            this.materialButton8.Location = new System.Drawing.Point(1618, 42);
-            this.materialButton8.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton8.Name = "materialButton8";
-            this.materialButton8.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton8.Size = new System.Drawing.Size(122, 36);
-            this.materialButton8.TabIndex = 0;
-            this.materialButton8.Text = "New Stock In";
-            this.materialButton8.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton8.UseAccentColor = false;
-            this.materialButton8.UseVisualStyleBackColor = true;
+            this.materialListView2.AutoSizeTable = false;
+            this.materialListView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialListView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListView2.Depth = 0;
+            this.materialListView2.FullRowSelect = true;
+            this.materialListView2.HideSelection = false;
+            this.materialListView2.Location = new System.Drawing.Point(105, 115);
+            this.materialListView2.MinimumSize = new System.Drawing.Size(200, 100);
+            this.materialListView2.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListView2.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView2.Name = "materialListView2";
+            this.materialListView2.OwnerDraw = true;
+            this.materialListView2.Size = new System.Drawing.Size(1635, 498);
+            this.materialListView2.TabIndex = 1;
+            this.materialListView2.UseCompatibleStateImageBehavior = false;
+            this.materialListView2.View = System.Windows.Forms.View.Details;
             // 
-            // lblStockHistory
+            // lblProd
             // 
-            this.lblStockHistory.AutoSize = true;
-            this.lblStockHistory.Location = new System.Drawing.Point(102, 42);
-            this.lblStockHistory.Name = "lblStockHistory";
-            this.lblStockHistory.Size = new System.Drawing.Size(82, 13);
-            this.lblStockHistory.TabIndex = 1;
-            this.lblStockHistory.Text = "Stock In History";
+            this.lblProd.AutoSize = true;
+            this.lblProd.Location = new System.Drawing.Point(102, 42);
+            this.lblProd.Name = "lblProd";
+            this.lblProd.Size = new System.Drawing.Size(97, 13);
+            this.lblProd.TabIndex = 0;
+            this.lblProd.Text = "Product Categories";
+            // 
+            // tabStockIn
+            // 
+            this.tabStockIn.Controls.Add(this.materialListView3);
+            this.tabStockIn.Controls.Add(this.lblStockHistory);
+            this.tabStockIn.Controls.Add(this.materialButton8);
+            this.tabStockIn.ImageKey = "stock.png";
+            this.tabStockIn.Location = new System.Drawing.Point(4, 39);
+            this.tabStockIn.Name = "tabStockIn";
+            this.tabStockIn.Size = new System.Drawing.Size(1542, 774);
+            this.tabStockIn.TabIndex = 3;
+            this.tabStockIn.Text = "Stock In";
+            this.tabStockIn.UseVisualStyleBackColor = true;
             // 
             // materialListView3
             // 
@@ -679,6 +631,54 @@
             this.materialListView3.TabIndex = 2;
             this.materialListView3.UseCompatibleStateImageBehavior = false;
             this.materialListView3.View = System.Windows.Forms.View.Details;
+            // 
+            // lblStockHistory
+            // 
+            this.lblStockHistory.AutoSize = true;
+            this.lblStockHistory.Location = new System.Drawing.Point(102, 42);
+            this.lblStockHistory.Name = "lblStockHistory";
+            this.lblStockHistory.Size = new System.Drawing.Size(82, 13);
+            this.lblStockHistory.TabIndex = 1;
+            this.lblStockHistory.Text = "Stock In History";
+            // 
+            // materialButton8
+            // 
+            this.materialButton8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton8.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton8.Depth = 0;
+            this.materialButton8.HighEmphasis = true;
+            this.materialButton8.Icon = null;
+            this.materialButton8.Location = new System.Drawing.Point(1618, 42);
+            this.materialButton8.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton8.Name = "materialButton8";
+            this.materialButton8.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton8.Size = new System.Drawing.Size(122, 36);
+            this.materialButton8.TabIndex = 0;
+            this.materialButton8.Text = "New Stock In";
+            this.materialButton8.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton8.UseAccentColor = false;
+            this.materialButton8.UseVisualStyleBackColor = true;
+            // 
+            // tabLogout
+            // 
+            this.tabLogout.ImageKey = "icons8-logout-32.png";
+            this.tabLogout.Location = new System.Drawing.Point(4, 39);
+            this.tabLogout.Name = "tabLogout";
+            this.tabLogout.Size = new System.Drawing.Size(1542, 774);
+            this.tabLogout.TabIndex = 4;
+            this.tabLogout.Text = "Logout";
+            this.tabLogout.UseVisualStyleBackColor = true;
+            // 
+            // imageListWh
+            // 
+            this.imageListWh.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListWh.ImageStream")));
+            this.imageListWh.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListWh.Images.SetKeyName(0, "dashboard.png");
+            this.imageListWh.Images.SetKeyName(1, "stock.png");
+            this.imageListWh.Images.SetKeyName(2, "icons8-categories-32.png");
+            this.imageListWh.Images.SetKeyName(3, "icons8-logout-32.png");
+            this.imageListWh.Images.SetKeyName(4, "icons8-supplier-32.png");
             // 
             // WarehouseForm
             // 

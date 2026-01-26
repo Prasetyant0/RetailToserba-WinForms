@@ -67,6 +67,7 @@
             this.lblManageUsr = new System.Windows.Forms.Label();
             this.tabActLog = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtSearchByUsrnm = new MaterialSkin.Controls.MaterialTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btn3 = new MaterialSkin.Controls.MaterialButton();
             this.btn2 = new MaterialSkin.Controls.MaterialButton();
@@ -88,7 +89,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tabLogout = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.txtSearchByUsrnm = new MaterialSkin.Controls.MaterialTextBox();
             this.materialTabControl.SuspendLayout();
             this.tabDashbaord.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -374,9 +374,9 @@
             this.lblUsrname.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsrname.Location = new System.Drawing.Point(125, 83);
             this.lblUsrname.Name = "lblUsrname";
-            this.lblUsrname.Size = new System.Drawing.Size(43, 17);
+            this.lblUsrname.Size = new System.Drawing.Size(13, 17);
             this.lblUsrname.TabIndex = 9;
-            this.lblUsrname.Text = "label7";
+            this.lblUsrname.Text = "-";
             // 
             // lblStatus
             // 
@@ -384,9 +384,9 @@
             this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.Location = new System.Drawing.Point(125, 183);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(43, 17);
+            this.lblStatus.Size = new System.Drawing.Size(13, 17);
             this.lblStatus.TabIndex = 8;
-            this.lblStatus.Text = "label7";
+            this.lblStatus.Text = "-";
             // 
             // lblLstLogin
             // 
@@ -394,9 +394,9 @@
             this.lblLstLogin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLstLogin.Location = new System.Drawing.Point(125, 150);
             this.lblLstLogin.Name = "lblLstLogin";
-            this.lblLstLogin.Size = new System.Drawing.Size(43, 17);
+            this.lblLstLogin.Size = new System.Drawing.Size(13, 17);
             this.lblLstLogin.TabIndex = 7;
-            this.lblLstLogin.Text = "label7";
+            this.lblLstLogin.Text = "-";
             // 
             // lblRole
             // 
@@ -404,9 +404,9 @@
             this.lblRole.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRole.Location = new System.Drawing.Point(125, 117);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(43, 17);
+            this.lblRole.Size = new System.Drawing.Size(13, 17);
             this.lblRole.TabIndex = 6;
-            this.lblRole.Text = "label7";
+            this.lblRole.Text = "-";
             // 
             // lblUsername
             // 
@@ -591,6 +591,23 @@
             this.groupBox3.Size = new System.Drawing.Size(1698, 724);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
+            // 
+            // txtSearchByUsrnm
+            // 
+            this.txtSearchByUsrnm.AnimateReadOnly = false;
+            this.txtSearchByUsrnm.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearchByUsrnm.Depth = 0;
+            this.txtSearchByUsrnm.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSearchByUsrnm.LeadingIcon = null;
+            this.txtSearchByUsrnm.Location = new System.Drawing.Point(115, 252);
+            this.txtSearchByUsrnm.MaxLength = 50;
+            this.txtSearchByUsrnm.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtSearchByUsrnm.Multiline = false;
+            this.txtSearchByUsrnm.Name = "txtSearchByUsrnm";
+            this.txtSearchByUsrnm.Size = new System.Drawing.Size(278, 50);
+            this.txtSearchByUsrnm.TabIndex = 13;
+            this.txtSearchByUsrnm.Text = "";
+            this.txtSearchByUsrnm.TrailingIcon = null;
             // 
             // label13
             // 
@@ -876,23 +893,6 @@
             this.imageList1.Images.SetKeyName(2, "activity.png");
             this.imageList1.Images.SetKeyName(3, "logs.png");
             this.imageList1.Images.SetKeyName(4, "icons8-logout-32.png");
-            // 
-            // txtSearchByUsrnm
-            // 
-            this.txtSearchByUsrnm.AnimateReadOnly = false;
-            this.txtSearchByUsrnm.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearchByUsrnm.Depth = 0;
-            this.txtSearchByUsrnm.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchByUsrnm.LeadingIcon = null;
-            this.txtSearchByUsrnm.Location = new System.Drawing.Point(115, 252);
-            this.txtSearchByUsrnm.MaxLength = 50;
-            this.txtSearchByUsrnm.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtSearchByUsrnm.Multiline = false;
-            this.txtSearchByUsrnm.Name = "txtSearchByUsrnm";
-            this.txtSearchByUsrnm.Size = new System.Drawing.Size(278, 50);
-            this.txtSearchByUsrnm.TabIndex = 13;
-            this.txtSearchByUsrnm.Text = "";
-            this.txtSearchByUsrnm.TrailingIcon = null;
             // 
             // MainForm
             // 

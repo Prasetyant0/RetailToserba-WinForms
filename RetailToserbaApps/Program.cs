@@ -1,25 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using RetailToserbaApps.Views;
-using RetailToserbaApps.Views.Dashboard;
-using RetailToserbaApps.Views.Pages;
+using RetailToserbaApps.Data;        
+using RetailToserbaApps.Views.Auth;  
 
 namespace RetailToserbaApps
 {
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TransactionHistoryForm());
+
+            try
+            {
+                DbInitializer.InitializeDatabase(); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error DB: {ex.Message}");
+            }
+
+            Application.Run(new LoginForm());
         }
     }
 }
