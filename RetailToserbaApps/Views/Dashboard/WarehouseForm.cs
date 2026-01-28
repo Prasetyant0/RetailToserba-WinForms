@@ -1,4 +1,10 @@
 ﻿using MaterialSkin.Controls;
+using RetailToserbaApps.Controllers;
+using RetailToserbaApps.Data;
+using RetailToserbaApps.Helpers;
+using RetailToserbaApps.Models;
+using RetailToserbaApps.Views.Auth;
+using RetailToserbaApps.Views.Pages;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,11 +14,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using RetailToserbaApps.Controllers;
-using RetailToserbaApps.Models;
-using RetailToserbaApps.Helpers;
-using RetailToserbaApps.Views.Pages;
-using RetailToserbaApps.Views.Auth;
 
 namespace RetailToserbaApps.Views.Dashboard
 {
@@ -21,6 +22,8 @@ namespace RetailToserbaApps.Views.Dashboard
         private WarehouseController warehouseController;
         private AuthController authController;
         private List<Barang> productList;
+        private List<Kategori> categoryList;
+        private List<Supplier> supplierList;
         private Dictionary<int, string> kategoriDict;
         private Dictionary<int, string> supplierDict;
 
@@ -88,6 +91,41 @@ namespace RetailToserbaApps.Views.Dashboard
             materialListView1.Columns.Add("Status", 100);
             materialListView1.FullRowSelect = true;
             materialListView1.GridLines = true;
+
+            lvwSupplier.Columns.Clear();
+            lvwSupplier.Columns.Add("No", 50);
+            lvwSupplier.Columns.Add("Kode Supplier", 120);
+            lvwSupplier.Columns.Add("Nama Supplier", 200);
+            lvwSupplier.Columns.Add("Nama Perusahaan", 200);
+            lvwSupplier.Columns.Add("Alamat", 200);
+            lvwSupplier.Columns.Add("No Telepon", 200);
+            lvwSupplier.Columns.Add("Email", 200);
+           
+            lvwSupplier.FullRowSelect = true;
+            lvwSupplier.GridLines = true;
+
+            materialListView2.Columns.Clear();
+            materialListView2.Columns.Add("No", 50);
+            materialListView2.Columns.Add("Kode Barang", 120);
+            materialListView2.Columns.Add("Nama Kategori", 200);
+            materialListView2.Columns.Add("Deskripsi", 300);
+            materialListView2.FullRowSelect = true;
+            materialListView2.GridLines = true;
+
+            materialListView3.Columns.Clear();
+            materialListView3.Columns.Add("No", 50);
+            materialListView3.Columns.Add("Kode", 120);
+            materialListView3.Columns.Add("Nama Barang", 200);
+            materialListView3.Columns.Add("Nama Supplier", 150);
+            materialListView3.Columns.Add("Barang Masuk", 150);
+           
+            materialListView3.Columns.Add("Stok Sekarang", 150);
+            materialListView3.Columns.Add("Tanggal Masuk", 200);
+            materialListView3.Columns.Add("User", 200);
+            materialListView3.FullRowSelect = true;
+            materialListView3.GridLines = true;
+
+
         }
 
         private void LoadInitialData()
@@ -95,6 +133,9 @@ namespace RetailToserbaApps.Views.Dashboard
             LoadLookupData();
             LoadProductList();
             LoadDashboardStatistics();
+            LoadSupplierList();
+            LoadCategoryList();
+            DisplayStocks();
         }
 
         private void AttachEventHandlers()
@@ -102,6 +143,7 @@ namespace RetailToserbaApps.Views.Dashboard
             btnAddProduct.Click += BtnAddProduct_Click;
             txtSearchProduct.TextChanged += TxtSearchProduct_TextChanged;
             materialListView1.DoubleClick += MaterialListView1_DoubleClick;
+
         }
 
         private void LoadLookupData()
@@ -139,6 +181,34 @@ namespace RetailToserbaApps.Views.Dashboard
             catch (Exception ex)
             {
                 MessageBox.Show($"Gagal memuat data produk:\n{ex.Message}", "Error", 
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadSupplierList()
+        {
+            try
+            {
+                supplierList = warehouseController.GetAllSupplier();
+                DisplaySuppliers(supplierList);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Gagal memuat data supplier:\n{ex.Message}", "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadCategoryList()
+        {
+            try
+            {
+                categoryList = warehouseController.GetAllKategori();
+                DisplayCategories(categoryList);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Gagal memuat data kategori:\n{ex.Message}", "Error",
                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -189,6 +259,69 @@ namespace RetailToserbaApps.Views.Dashboard
             LoadDashboardStatistics();
         }
 
+        private void DisplaySuppliers(List<Supplier> suppliers)
+        {
+            lvwSupplier.Items.Clear();
+
+            int rowNumber = 1;
+            foreach (var suppl in suppliers)
+            {
+                ListViewItem item = new ListViewItem(rowNumber.ToString());
+                item.SubItems.Add(suppl.SupplierId.ToString());
+                item.SubItems.Add(suppl.NamaSupplier);
+                item.SubItems.Add(suppl.NamaPerusahaan);
+                item.SubItems.Add(suppl.Alamat);
+                item.SubItems.Add(suppl.NoTelepon);
+                item.SubItems.Add(suppl.Email);
+                item.Tag = suppl;
+
+                lvwSupplier.Items.Add(item);
+                rowNumber++;
+            }
+        }
+
+        private void DisplayCategories(List<Kategori> categories)
+        {
+            materialListView2.Items.Clear();
+
+            int rowNumber = 1;
+            foreach (var category in categories)
+            {
+                ListViewItem item = new ListViewItem(rowNumber.ToString());
+                item.SubItems.Add(category.KategoriId.ToString());
+                item.SubItems.Add(category.NamaKategori);
+                item.SubItems.Add(category.Deskripsi);
+                item.Tag = category;
+
+                materialListView2.Items.Add(item);
+                rowNumber++;
+            }
+        }
+
+        private void DisplayStocks()
+        {
+            materialListView3.Items.Clear();
+
+            var data = SqliteDataAccess.LoadBarangView();
+
+            int rowNumber = 1;
+            foreach (var item in data)
+            {
+                ListViewItem lvi = new ListViewItem(rowNumber.ToString());
+                lvi.SubItems.Add(item.KodeBarang);
+                lvi.SubItems.Add(item.NamaBarang);
+                lvi.SubItems.Add(item.NamaSupplier);
+                lvi.SubItems.Add(item.BrgMasukTotal.ToString());
+             
+                lvi.SubItems.Add(item.StokTersedia.ToString());
+                lvi.SubItems.Add(item.CreatedAt);
+                lvi.SubItems.Add(item.NamaUser);
+                lvi.Tag = item;
+
+                materialListView3.Items.Add(lvi);
+                rowNumber++;
+            }
+        }
         private void LoadDashboardStatistics()
         {
             try
@@ -251,6 +384,7 @@ namespace RetailToserbaApps.Views.Dashboard
                     {
                         LoadLookupData();
                         LoadProductList();
+                        DisplayStocks();
                     }
                 }
             }
@@ -291,6 +425,7 @@ namespace RetailToserbaApps.Views.Dashboard
                     {
                         LoadLookupData();
                         LoadProductList();
+                        LoadSupplierList();
                     }
                 }
             }
@@ -312,6 +447,7 @@ namespace RetailToserbaApps.Views.Dashboard
                     {
                         LoadLookupData();
                         LoadProductList();
+                        LoadCategoryList();
                     }
                 }
             }
@@ -321,9 +457,59 @@ namespace RetailToserbaApps.Views.Dashboard
                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void BtnNewStock_Click(object sender, EventArgs e)
+        private void LvwStock_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+            if (materialListView3.SelectedItems.Count > 0)
+            {
+                BarangView selectedUser = (BarangView)materialListView3.SelectedItems[0].Tag;
+            }
+        }
+        private void btnNewStock_Click(object sender, EventArgs e)
+        {
+            if (materialListView3.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Pilih barang yang ingin di restock!", "Peringatan",
+                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Ambil data barang dari Tag yang sudah kita simpan
+            BarangView selectedUser = (BarangView)materialListView3.SelectedItems[0].Tag;
+
+            if (!ValidateCategoryExists()) return;
+
+            try
+            {
+                // PERBAIKAN: Masukkan 'selectedUser' ke dalam parameter form
+                using (var form = new AddStockForm(selectedUser))
+                {
+                    var result = form.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        LoadInitialData(); // Refresh list setelah stok diupdate
+                        LoadProductList();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Gagal membuka form tambah stok:\n{ex.Message}", "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+       /* private void btnNewStock_Click(object sender, EventArgs e)
+        {
+            if (materialListView3.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Pilih barang yang ingin di restock!", "Peringatan",
+                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            BarangView selectedUser = (BarangView)materialListView3.SelectedItems[0].Tag;
+            int selectedIndex = materialListView3.SelectedItems[0].Index;
+
+
             if (!ValidateCategoryExists())
             {
                 return;
@@ -331,7 +517,7 @@ namespace RetailToserbaApps.Views.Dashboard
 
             try
             {
-                using (var form = new AddProductForm())
+                using (var form = new AddStockForm())
                 {
                     var result = form.ShowDialog();
                     if (result == DialogResult.OK)
@@ -346,7 +532,7 @@ namespace RetailToserbaApps.Views.Dashboard
                 MessageBox.Show($"Gagal membuka form tambah stok:\n{ex.Message}", "Error",
                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        }*/
 
         private bool ValidateCategoryExists()
         {
@@ -375,9 +561,9 @@ namespace RetailToserbaApps.Views.Dashboard
             }
         }
 
-        private void MaterialTabControl_Selecting(object sender, TabControlCancelEventArgs e)
+        private void TabCntWh_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            if (e.TabPageIndex == 3)
+            if (e.TabPageIndex == 4)
             {
                 e.Cancel = true;
 

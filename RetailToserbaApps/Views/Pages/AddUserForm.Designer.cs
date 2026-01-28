@@ -174,6 +174,7 @@ namespace RetailToserbaApps.Views.Pages
             this.btnSave.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnSave.UseAccentColor = false;
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -193,13 +194,14 @@ namespace RetailToserbaApps.Views.Pages
             this.btnCancel.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnCancel.UseAccentColor = false;
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(37, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 21);
+            this.label1.Size = new System.Drawing.Size(55, 21);
             this.label1.TabIndex = 8;
             this.label1.Text = "Nama:";
             // 
@@ -208,7 +210,7 @@ namespace RetailToserbaApps.Views.Pages
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(37, 173);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 21);
+            this.label2.Size = new System.Drawing.Size(84, 21);
             this.label2.TabIndex = 9;
             this.label2.Text = "Username:";
             // 
@@ -217,7 +219,7 @@ namespace RetailToserbaApps.Views.Pages
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(37, 259);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 21);
+            this.label3.Size = new System.Drawing.Size(79, 21);
             this.label3.TabIndex = 10;
             this.label3.Text = "Password:";
             // 
@@ -226,7 +228,7 @@ namespace RetailToserbaApps.Views.Pages
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(37, 345);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 21);
+            this.label4.Size = new System.Drawing.Size(94, 21);
             this.label4.TabIndex = 11;
             this.label4.Text = "No. Telepon:";
             // 
@@ -235,7 +237,7 @@ namespace RetailToserbaApps.Views.Pages
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(37, 445);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 21);
+            this.label5.Size = new System.Drawing.Size(44, 21);
             this.label5.TabIndex = 12;
             this.label5.Text = "Role:";
             // 
@@ -244,7 +246,7 @@ namespace RetailToserbaApps.Views.Pages
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(287, 445);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 21);
+            this.label6.Size = new System.Drawing.Size(55, 21);
             this.label6.TabIndex = 13;
             this.label6.Text = "Status:";
             // 

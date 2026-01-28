@@ -29,22 +29,17 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox4 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox5 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialTxtSuppName = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialTxtCompName = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialTxtPhone = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialTxtEmail = new MaterialSkin.Controls.MaterialTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.richTxtAddress = new System.Windows.Forms.RichTextBox();
+            this.materialBtnCancel = new MaterialSkin.Controls.MaterialButton();
+            this.materialBtnSave = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // label1
@@ -57,73 +52,73 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Supplier Name";
             // 
-            // materialTextBox1
+            // materialTxtSuppName
             // 
-            this.materialTextBox1.AnimateReadOnly = false;
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(29, 136);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(363, 50);
-            this.materialTextBox1.TabIndex = 1;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
+            this.materialTxtSuppName.AnimateReadOnly = false;
+            this.materialTxtSuppName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTxtSuppName.Depth = 0;
+            this.materialTxtSuppName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTxtSuppName.LeadingIcon = null;
+            this.materialTxtSuppName.Location = new System.Drawing.Point(29, 136);
+            this.materialTxtSuppName.MaxLength = 50;
+            this.materialTxtSuppName.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTxtSuppName.Multiline = false;
+            this.materialTxtSuppName.Name = "materialTxtSuppName";
+            this.materialTxtSuppName.Size = new System.Drawing.Size(363, 50);
+            this.materialTxtSuppName.TabIndex = 1;
+            this.materialTxtSuppName.Text = "";
+            this.materialTxtSuppName.TrailingIcon = null;
             // 
-            // materialTextBox2
+            // materialTxtCompName
             // 
-            this.materialTextBox2.AnimateReadOnly = false;
-            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialTextBox2.LeadingIcon = null;
-            this.materialTextBox2.Location = new System.Drawing.Point(29, 237);
-            this.materialTextBox2.MaxLength = 50;
-            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox2.Multiline = false;
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(363, 50);
-            this.materialTextBox2.TabIndex = 2;
-            this.materialTextBox2.Text = "";
-            this.materialTextBox2.TrailingIcon = null;
+            this.materialTxtCompName.AnimateReadOnly = false;
+            this.materialTxtCompName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTxtCompName.Depth = 0;
+            this.materialTxtCompName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTxtCompName.LeadingIcon = null;
+            this.materialTxtCompName.Location = new System.Drawing.Point(29, 237);
+            this.materialTxtCompName.MaxLength = 50;
+            this.materialTxtCompName.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTxtCompName.Multiline = false;
+            this.materialTxtCompName.Name = "materialTxtCompName";
+            this.materialTxtCompName.Size = new System.Drawing.Size(363, 50);
+            this.materialTxtCompName.TabIndex = 2;
+            this.materialTxtCompName.Text = "";
+            this.materialTxtCompName.TrailingIcon = null;
             // 
-            // materialTextBox4
+            // materialTxtPhone
             // 
-            this.materialTextBox4.AnimateReadOnly = false;
-            this.materialTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox4.Depth = 0;
-            this.materialTextBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialTextBox4.LeadingIcon = null;
-            this.materialTextBox4.Location = new System.Drawing.Point(29, 474);
-            this.materialTextBox4.MaxLength = 50;
-            this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox4.Multiline = false;
-            this.materialTextBox4.Name = "materialTextBox4";
-            this.materialTextBox4.Size = new System.Drawing.Size(363, 50);
-            this.materialTextBox4.TabIndex = 4;
-            this.materialTextBox4.Text = "";
-            this.materialTextBox4.TrailingIcon = null;
+            this.materialTxtPhone.AnimateReadOnly = false;
+            this.materialTxtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTxtPhone.Depth = 0;
+            this.materialTxtPhone.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTxtPhone.LeadingIcon = null;
+            this.materialTxtPhone.Location = new System.Drawing.Point(29, 474);
+            this.materialTxtPhone.MaxLength = 50;
+            this.materialTxtPhone.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTxtPhone.Multiline = false;
+            this.materialTxtPhone.Name = "materialTxtPhone";
+            this.materialTxtPhone.Size = new System.Drawing.Size(363, 50);
+            this.materialTxtPhone.TabIndex = 4;
+            this.materialTxtPhone.Text = "";
+            this.materialTxtPhone.TrailingIcon = null;
             // 
-            // materialTextBox5
+            // materialTxtEmail
             // 
-            this.materialTextBox5.AnimateReadOnly = false;
-            this.materialTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox5.Depth = 0;
-            this.materialTextBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialTextBox5.LeadingIcon = null;
-            this.materialTextBox5.Location = new System.Drawing.Point(29, 572);
-            this.materialTextBox5.MaxLength = 50;
-            this.materialTextBox5.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox5.Multiline = false;
-            this.materialTextBox5.Name = "materialTextBox5";
-            this.materialTextBox5.Size = new System.Drawing.Size(363, 50);
-            this.materialTextBox5.TabIndex = 5;
-            this.materialTextBox5.Text = "";
-            this.materialTextBox5.TrailingIcon = null;
+            this.materialTxtEmail.AnimateReadOnly = false;
+            this.materialTxtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTxtEmail.Depth = 0;
+            this.materialTxtEmail.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTxtEmail.LeadingIcon = null;
+            this.materialTxtEmail.Location = new System.Drawing.Point(29, 572);
+            this.materialTxtEmail.MaxLength = 50;
+            this.materialTxtEmail.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTxtEmail.Multiline = false;
+            this.materialTxtEmail.Name = "materialTxtEmail";
+            this.materialTxtEmail.Size = new System.Drawing.Size(363, 50);
+            this.materialTxtEmail.TabIndex = 5;
+            this.materialTxtEmail.Text = "";
+            this.materialTxtEmail.TrailingIcon = null;
             // 
             // label2
             // 
@@ -165,137 +160,72 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Email";
             // 
-            // label6
+            // richTxtAddress
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 639);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 21);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Notes";
+            this.richTxtAddress.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.richTxtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTxtAddress.Location = new System.Drawing.Point(29, 340);
+            this.richTxtAddress.Name = "richTxtAddress";
+            this.richTxtAddress.Size = new System.Drawing.Size(363, 85);
+            this.richTxtAddress.TabIndex = 15;
+            this.richTxtAddress.Text = "";
             // 
-            // richTextBox2
+            // materialBtnCancel
             // 
-            this.richTextBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox2.Location = new System.Drawing.Point(29, 672);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(363, 85);
-            this.richTextBox2.TabIndex = 14;
-            this.richTextBox2.Text = "";
+            this.materialBtnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialBtnCancel.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialBtnCancel.Depth = 0;
+            this.materialBtnCancel.HighEmphasis = true;
+            this.materialBtnCancel.Icon = null;
+            this.materialBtnCancel.Location = new System.Drawing.Point(233, 653);
+            this.materialBtnCancel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialBtnCancel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialBtnCancel.Name = "materialBtnCancel";
+            this.materialBtnCancel.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialBtnCancel.Size = new System.Drawing.Size(77, 36);
+            this.materialBtnCancel.TabIndex = 19;
+            this.materialBtnCancel.Text = "Cancel";
+            this.materialBtnCancel.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialBtnCancel.UseAccentColor = false;
+            this.materialBtnCancel.UseVisualStyleBackColor = true;
+            this.materialBtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // richTextBox1
+            // materialBtnSave
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Location = new System.Drawing.Point(29, 340);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(363, 85);
-            this.richTextBox1.TabIndex = 15;
-            this.richTextBox1.Text = "";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 784);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 21);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Status";
-            // 
-            // materialRadioButton1
-            // 
-            this.materialRadioButton1.AutoSize = true;
-            this.materialRadioButton1.Depth = 0;
-            this.materialRadioButton1.Location = new System.Drawing.Point(29, 814);
-            this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton1.Name = "materialRadioButton1";
-            this.materialRadioButton1.Ripple = true;
-            this.materialRadioButton1.Size = new System.Drawing.Size(78, 37);
-            this.materialRadioButton1.TabIndex = 17;
-            this.materialRadioButton1.TabStop = true;
-            this.materialRadioButton1.Text = "Active";
-            this.materialRadioButton1.UseVisualStyleBackColor = true;
-            // 
-            // materialRadioButton2
-            // 
-            this.materialRadioButton2.AutoSize = true;
-            this.materialRadioButton2.Depth = 0;
-            this.materialRadioButton2.Location = new System.Drawing.Point(125, 814);
-            this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton2.Name = "materialRadioButton2";
-            this.materialRadioButton2.Ripple = true;
-            this.materialRadioButton2.Size = new System.Drawing.Size(90, 37);
-            this.materialRadioButton2.TabIndex = 18;
-            this.materialRadioButton2.TabStop = true;
-            this.materialRadioButton2.Text = "Inactive";
-            this.materialRadioButton2.UseVisualStyleBackColor = true;
-            // 
-            // materialButton1
-            // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(233, 886);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(77, 36);
-            this.materialButton1.TabIndex = 19;
-            this.materialButton1.Text = "Cancel";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            // 
-            // materialButton2
-            // 
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(328, 886);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(64, 36);
-            this.materialButton2.TabIndex = 20;
-            this.materialButton2.Text = "Save";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialBtnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialBtnSave.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialBtnSave.Depth = 0;
+            this.materialBtnSave.HighEmphasis = true;
+            this.materialBtnSave.Icon = null;
+            this.materialBtnSave.Location = new System.Drawing.Point(328, 653);
+            this.materialBtnSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialBtnSave.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialBtnSave.Name = "materialBtnSave";
+            this.materialBtnSave.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialBtnSave.Size = new System.Drawing.Size(64, 36);
+            this.materialBtnSave.TabIndex = 20;
+            this.materialBtnSave.Text = "Save";
+            this.materialBtnSave.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialBtnSave.UseAccentColor = false;
+            this.materialBtnSave.UseVisualStyleBackColor = true;
+            this.materialBtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // AddSupplierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 942);
-            this.Controls.Add(this.materialButton2);
-            this.Controls.Add(this.materialButton1);
-            this.Controls.Add(this.materialRadioButton2);
-            this.Controls.Add(this.materialRadioButton1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(419, 718);
+            this.Controls.Add(this.materialBtnSave);
+            this.Controls.Add(this.materialBtnCancel);
+            this.Controls.Add(this.richTxtAddress);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.materialTextBox5);
-            this.Controls.Add(this.materialTextBox4);
-            this.Controls.Add(this.materialTextBox2);
-            this.Controls.Add(this.materialTextBox1);
+            this.Controls.Add(this.materialTxtEmail);
+            this.Controls.Add(this.materialTxtPhone);
+            this.Controls.Add(this.materialTxtCompName);
+            this.Controls.Add(this.materialTxtSuppName);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -311,21 +241,16 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox4;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox5;
+        private MaterialSkin.Controls.MaterialTextBox materialTxtSuppName;
+        private MaterialSkin.Controls.MaterialTextBox materialTxtCompName;
+        private MaterialSkin.Controls.MaterialTextBox materialTxtPhone;
+        private MaterialSkin.Controls.MaterialTextBox materialTxtEmail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label7;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton1;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton2;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private System.Windows.Forms.RichTextBox richTxtAddress;
+        private MaterialSkin.Controls.MaterialButton materialBtnCancel;
+        private MaterialSkin.Controls.MaterialButton materialBtnSave;
     }
 }

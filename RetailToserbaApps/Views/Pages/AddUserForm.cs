@@ -1,4 +1,4 @@
-using MaterialSkin.Controls;
+ using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +27,7 @@ namespace RetailToserbaApps.Views.Pages
         {
             InitializeComponent();
 
-            var materialSkinManager = MaterialSkin.MaterialSkinManager.Instance;
+           /* var materialSkinManager = MaterialSkin.MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(
@@ -36,7 +36,7 @@ namespace RetailToserbaApps.Views.Pages
                 MaterialSkin.Primary.BlueGrey500,
                 MaterialSkin.Accent.LightBlue400,
                 MaterialSkin.TextShade.WHITE
-            );
+            );*/
 
             this.userId = userId;
             this.isEditMode = userId.HasValue;
@@ -52,8 +52,7 @@ namespace RetailToserbaApps.Views.Pages
             
             txtPassword.Password = true;
             
-            btnSave.Click += BtnSave_Click;
-            btnCancel.Click += BtnCancel_Click;
+            
         }
 
         protected override void OnLoad(EventArgs e)
@@ -116,7 +115,22 @@ namespace RetailToserbaApps.Views.Pages
                 this.Close();
             }
         }
-        private void BtnSave_Click(object sender, EventArgs e)
+      /*  private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Test sederhana dulu
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Dispose();
+            }
+        }*/
+       private void btnSave_Click(object sender, EventArgs e)
         {
             if (!ValidateInputs())
             {
@@ -130,18 +144,19 @@ namespace RetailToserbaApps.Views.Pages
                     Nama = txtNama.Text.Trim(),
                     Username = txtUsername.Text.Trim(),
                     Password = txtPassword.Text.Trim(),
-                    NoTelepon = txtNoTelepon.Text.Trim(),
                     Role = cmbRole.SelectedItem.ToString(),
+                    NoTelepon = txtNoTelepon.Text.Trim(),
+                    
                     Status = cmbStatus.SelectedItem.ToString(),
                     CreatedAt = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
                 };
-                
+               // string successMessage = "";
                 if (isEditMode)
                 {
                     user.UserId = userId.Value;
                     adminController.UpdateUser(user);
                     
-                    this.DialogResult = DialogResult.OK;
+                   // this.DialogResult = DialogResult.OK;
                     
                     MessageBox.Show("User berhasil diperbarui!", "Sukses",
                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -159,23 +174,23 @@ namespace RetailToserbaApps.Views.Pages
                     }
                     
                     adminController.InsertUser(user);
-                    
-                    this.DialogResult = DialogResult.OK;
-                    
+
                     MessageBox.Show("User berhasil ditambahkan!", "Sukses",
                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
-                    this.Close();
                 }
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Gagal menyimpan user:\n{ex.Message}", "Error",
                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
-                this.DialogResult = DialogResult.None;
+               // this.DialogResult = DialogResult.None;
             }
         }
+
 
         private bool ValidateInputs()
         {
@@ -186,7 +201,7 @@ namespace RetailToserbaApps.Views.Pages
                 txtNama.Focus();
                 return false;
             }
-            
+
             if (string.IsNullOrWhiteSpace(txtUsername.Text))
             {
                 MessageBox.Show("Username tidak boleh kosong!", "Validasi",
@@ -194,7 +209,7 @@ namespace RetailToserbaApps.Views.Pages
                 txtUsername.Focus();
                 return false;
             }
-            
+
             if (txtUsername.Text.Trim().Length < 3)
             {
                 MessageBox.Show("Username minimal 3 karakter!", "Validasi",
@@ -202,7 +217,7 @@ namespace RetailToserbaApps.Views.Pages
                 txtUsername.Focus();
                 return false;
             }
-            
+
             if (string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 MessageBox.Show("Password tidak boleh kosong!", "Validasi",
@@ -210,7 +225,7 @@ namespace RetailToserbaApps.Views.Pages
                 txtPassword.Focus();
                 return false;
             }
-            
+
             if (txtPassword.Text.Trim().Length < 6)
             {
                 MessageBox.Show("Password minimal 6 karakter!", "Validasi",
@@ -218,7 +233,7 @@ namespace RetailToserbaApps.Views.Pages
                 txtPassword.Focus();
                 return false;
             }
-            
+
             if (string.IsNullOrWhiteSpace(txtNoTelepon.Text))
             {
                 MessageBox.Show("Nomor telepon tidak boleh kosong!", "Validasi",
@@ -226,7 +241,7 @@ namespace RetailToserbaApps.Views.Pages
                 txtNoTelepon.Focus();
                 return false;
             }
-            
+
             if (cmbRole.SelectedIndex < 0)
             {
                 MessageBox.Show("Silakan pilih role!", "Validasi",
@@ -234,7 +249,7 @@ namespace RetailToserbaApps.Views.Pages
                 cmbRole.Focus();
                 return false;
             }
-            
+
             if (cmbStatus.SelectedIndex < 0)
             {
                 MessageBox.Show("Silakan pilih status!", "Validasi",
@@ -242,12 +257,13 @@ namespace RetailToserbaApps.Views.Pages
                 cmbStatus.Focus();
                 return false;
             }
-            
+
             return true;
         }
 
-        private void BtnCancel_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Cancel clicked!");
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }

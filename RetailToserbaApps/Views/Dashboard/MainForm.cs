@@ -48,27 +48,27 @@ namespace RetailToserbaApps.Views.Dashboard
         private void ConfigureUIStyles()
         {
             lblAdmin.Font = new Font("Segoe UI", 16, FontStyle.Bold);
-            label1.BackColor = Color.FromArgb(223, 252, 232);
+            
             label1.Font = new Font("Segoe UI", 14, FontStyle.Bold);
-            label2.BackColor = Color.FromArgb(221, 234, 253);
+            
             label2.Font = new Font("Segoe UI", 14, FontStyle.Bold);
-            lblStock.BackColor = Color.FromArgb(253, 248, 197);
+            
             lblStock.Font = new Font("Segoe UI", 14, FontStyle.Bold);
-            lblActivities.BackColor = Color.FromArgb(242, 232, 254);
+           
             lblActivities.Font = new Font("Segoe UI", 14, FontStyle.Bold);
 
-            lblTtlTransaction.BackColor = Color.FromArgb(223, 252, 232);
+            
             lblTtlTransaction.Font = new Font("Segoe UI", 14, FontStyle.Regular);
-            lblTtlUsers.BackColor = Color.FromArgb(221, 234, 253);
+           
             lblTtlUsers.Font = new Font("Segoe UI", 14, FontStyle.Regular);
-            lblTtlStock.BackColor = Color.FromArgb(253, 248, 197);
+           
             lblTtlStock.Font = new Font("Segoe UI", 14, FontStyle.Regular);
-            lblRecentAct.BackColor = Color.FromArgb(242, 232, 254);
+       
             lblRecentAct.Font = new Font("Segoe UI", 14, FontStyle.Regular);
 
             lblManageUsr.Font = new Font("Segoe UI", 16, FontStyle.Bold);
             panel1.BackColor = Color.White;
-            lblUsrDetails.BackColor = Color.FromArgb(255,255,255); 
+           
             lblUsrDetails.Font = new Font("Segoe UI", 12, FontStyle.Bold);
 
             label3.BackColor = Color.White;
@@ -117,12 +117,14 @@ namespace RetailToserbaApps.Views.Dashboard
             LoadDashboardStatistics();
             LoadUserList();
             LoadActivityLogs();
+            
+
         }
 
         private void AttachEventHandlers()
         {
-            materialButton1.Click += BtnAddUser_Click;
-            materialButton2.Click += BtnEditUser_Click;
+            
+          
             materialButton3.Click += BtnDeleteUser_Click;
             lvwManUsers.SelectedIndexChanged += LvwManUsers_SelectedIndexChanged;
             btnSearch.Click += BtnSearch_Click;
@@ -130,11 +132,15 @@ namespace RetailToserbaApps.Views.Dashboard
             dateTimePicker1.ValueChanged += DateTimePicker1_ValueChanged;
             materialTabControl.Selecting += MaterialTabControl_Selecting;
         }
-
+        private bool isLoadingData = false;
         private void LoadUserList()
         {
             try
             {
+                isLoadingData = true;
+                //lvwManUsers.BeginUpdate();
+                //lvwManUsers.SelectedIndexChanged -= LvwManUsers_SelectedIndexChanged;
+
                 userList = adminController.GetAllUsers();
                 DisplayUsers(userList);
             }
@@ -143,7 +149,33 @@ namespace RetailToserbaApps.Views.Dashboard
                 MessageBox.Show($"Gagal memuat data user:\n{ex.Message}", "Error", 
                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                // ✅ ATTACH kembali event handler
+                //lvwManUsers.SelectedIndexChanged += LvwManUsers_SelectedIndexChanged;
+                //lvwManUsers.EndUpdate();
+                isLoadingData = false;
+            }
         }
+        
+        private void LoadDashboardStatistics()
+        {
+            try
+            {
+                var stats = adminController.GetDashboardStatistics();
+
+                lblTtlUsers.Text = stats["TotalUsers"].ToString();
+                lblTtlTransaction.Text = stats["TotalTransactions"].ToString();
+                lblTtlStock.Text = stats["LowStock"].ToString();
+                lblRecentAct.Text = stats["TotalLogs"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Gagal memuat statistik dashboard:\n{ex.Message}", "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
 
         private void DisplayUsers(List<User> users)
         {
@@ -171,6 +203,7 @@ namespace RetailToserbaApps.Views.Dashboard
 
         private void LvwManUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isLoadingData) return;
             if (lvwManUsers.SelectedItems.Count > 0)
             {
                 User selectedUser = (User)lvwManUsers.SelectedItems[0].Tag;
@@ -197,20 +230,37 @@ namespace RetailToserbaApps.Views.Dashboard
             lblLstLogin.Text = "-";
             lblStatus.Text = "-";
         }
-
-        private void BtnAddUser_Click(object sender, EventArgs e)
+        
+        private  void BtnAddUser_Click(object sender, EventArgs e)
         {
             using (var form = new AddUserForm())
             {
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
+                    
                     LoadUserList();
                     LoadDashboardStatistics();
                 }
             }
         }
+        
+       /* private async void BtnAddUser_Click(object sender, EventArgs e)
+        {
+            using (var form = new AddUserForm())
+            {
+                var result = form.ShowDialog();
+                Console.WriteLine("Dialog selesai");  // Cek apakah muncul sebelum freeze
 
+                if (result == DialogResult.OK)
+                {
+                    Console.WriteLine("Mulai load data async...");
+                    await LoadUserListAsync();  // Di sinilah freeze?
+                    Console.WriteLine("Selesai load data async.");
+                }
+            }
+        }
+       */
         private void BtnEditUser_Click(object sender, EventArgs e)
         {
             if (lvwManUsers.SelectedItems.Count == 0)
@@ -221,15 +271,25 @@ namespace RetailToserbaApps.Views.Dashboard
             }
             
             User selectedUser = (User)lvwManUsers.SelectedItems[0].Tag;
-            
+            int selectedIndex = lvwManUsers.SelectedItems[0].Index;
+
             using (var form = new AddUserForm(selectedUser.UserId))
             {
+                lvwManUsers.SelectedIndexChanged -= LvwManUsers_SelectedIndexChanged;
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
+                    
                     LoadUserList();
                     LoadDashboardStatistics();
+                    //LoadUserList();
+                    //LoadDashboardStatistics();
+                    if (selectedIndex < lvwManUsers.Items.Count)
+                    {
+                        lvwManUsers.Items[selectedIndex].Selected = true;
+                    }
                 }
+                lvwManUsers.SelectedIndexChanged += LvwManUsers_SelectedIndexChanged;
             }
         }
 
@@ -391,23 +451,7 @@ namespace RetailToserbaApps.Views.Dashboard
             }
         }
 
-        private void LoadDashboardStatistics()
-        {
-            try
-            {
-                var stats = adminController.GetDashboardStatistics();
-                
-                lblTtlUsers.Text = stats["TotalUsers"].ToString();
-                lblTtlTransaction.Text = stats["TotalTransactions"].ToString();
-                lblTtlStock.Text = stats["LowStock"].ToString();
-                lblRecentAct.Text = stats["TotalLogs"].ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Gagal memuat statistik dashboard:\n{ex.Message}", "Error", 
-                               MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+       
 
         private void MaterialTabControl_Selecting(object sender, TabControlCancelEventArgs e)
         {
@@ -424,6 +468,7 @@ namespace RetailToserbaApps.Views.Dashboard
                 
                 if (confirm == DialogResult.Yes)
                 {
+                   // LogLoutActivity(User user);
                     PerformLogout();
                 }
             }
@@ -446,7 +491,7 @@ namespace RetailToserbaApps.Views.Dashboard
             }
         }
 
-        private void materialCard1_Paint(object sender, PaintEventArgs e)
+       /* private void materialCard1_Paint(object sender, PaintEventArgs e)
         {
             using(SolidBrush brush = new SolidBrush(Color.FromArgb(223, 252, 232)))
             {
@@ -477,5 +522,6 @@ namespace RetailToserbaApps.Views.Dashboard
                 e.Graphics.FillRectangle(brush, 0, 0, materialCard3.Width, materialCard3.Height);
             }
         }
+       */
     }
 }

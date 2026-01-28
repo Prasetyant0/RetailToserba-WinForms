@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using RetailToserbaApps.Data;        
-using RetailToserbaApps.Views.Auth;  
+using RetailToserbaApps.Views.Auth;
+using RetailToserbaApps.Views.Dashboard;
+using RetailToserbaApps.Views.Pages;
 
 namespace RetailToserbaApps
 {

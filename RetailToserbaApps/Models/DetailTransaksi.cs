@@ -13,5 +13,6 @@ namespace RetailToserbaApps.Models
         public int BarangId { get; set; }
         public int Quantity { get; set; }
         public long Subtotal { get; set; }
+        public long HargaSatuan { get; set; }
     }
 }

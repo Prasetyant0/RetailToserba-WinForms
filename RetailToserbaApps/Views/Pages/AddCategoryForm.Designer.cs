@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialNmKategori = new MaterialSkin.Controls.MaterialTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTxtDeskripsi = new System.Windows.Forms.RichTextBox();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
@@ -46,22 +46,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Category Name";
             // 
-            // materialTextBox1
+            // materialNmKategori
             // 
-            this.materialTextBox1.AnimateReadOnly = false;
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(41, 141);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(282, 50);
-            this.materialTextBox1.TabIndex = 1;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
+            this.materialNmKategori.AnimateReadOnly = false;
+            this.materialNmKategori.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialNmKategori.Depth = 0;
+            this.materialNmKategori.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialNmKategori.LeadingIcon = null;
+            this.materialNmKategori.Location = new System.Drawing.Point(41, 141);
+            this.materialNmKategori.MaxLength = 50;
+            this.materialNmKategori.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialNmKategori.Multiline = false;
+            this.materialNmKategori.Name = "materialNmKategori";
+            this.materialNmKategori.Size = new System.Drawing.Size(282, 50);
+            this.materialNmKategori.TabIndex = 1;
+            this.materialNmKategori.Text = "";
+            this.materialNmKategori.TrailingIcon = null;
             // 
             // label2
             // 
@@ -74,13 +74,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Description";
             // 
-            // richTextBox1
+            // richTxtDeskripsi
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(41, 250);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(282, 96);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
+            this.richTxtDeskripsi.Location = new System.Drawing.Point(41, 250);
+            this.richTxtDeskripsi.Name = "richTxtDeskripsi";
+            this.richTxtDeskripsi.Size = new System.Drawing.Size(282, 96);
+            this.richTxtDeskripsi.TabIndex = 3;
+            this.richTxtDeskripsi.Text = "";
             // 
             // materialButton1
             // 
@@ -100,6 +100,7 @@
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton1.UseAccentColor = false;
             this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // materialButton2
             // 
@@ -119,6 +120,7 @@
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // AddCategoryForm
             // 
@@ -127,9 +129,9 @@
             this.ClientSize = new System.Drawing.Size(366, 456);
             this.Controls.Add(this.materialButton2);
             this.Controls.Add(this.materialButton1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.richTxtDeskripsi);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.materialTextBox1);
+            this.Controls.Add(this.materialNmKategori);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -145,9 +147,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialTextBox materialNmKategori;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTxtDeskripsi;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialButton materialButton2;
     }

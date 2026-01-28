@@ -46,25 +46,21 @@
             this.txtSearch = new MaterialSkin.Controls.MaterialTextBox();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
+            this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblDateValue = new System.Windows.Forms.Label();
+            this.lblCshValue = new System.Windows.Forms.Label();
+            this.lblPymntMthdValue = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.lblTrnsIDValue = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnClsDetail = new MaterialSkin.Controls.MaterialButton();
             this.btnPrntInvoice = new MaterialSkin.Controls.MaterialButton();
             this.lvwTrnsHistory = new MaterialSkin.Controls.MaterialListView();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblChangeValue = new System.Windows.Forms.Label();
-            this.lblCustCashValue = new System.Windows.Forms.Label();
-            this.lblPymntMthdValue = new System.Windows.Forms.Label();
-            this.lblCshValue = new System.Windows.Forms.Label();
-            this.lblDateValue = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTrnsHistory)).BeginInit();
@@ -99,6 +95,7 @@
             this.btnLogout.Text = "  Logout";
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnVwProduct
             // 
@@ -113,6 +110,7 @@
             this.btnVwProduct.Text = "  View Product";
             this.btnVwProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVwProduct.UseVisualStyleBackColor = true;
+            this.btnVwProduct.Click += new System.EventHandler(this.btnVwProduct_Click);
             // 
             // btnTrnsHstry
             // 
@@ -127,6 +125,7 @@
             this.btnTrnsHstry.Text = "  Transaction History";
             this.btnTrnsHstry.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTrnsHstry.UseVisualStyleBackColor = true;
+            this.btnTrnsHstry.Click += new System.EventHandler(this.btnTrnsHstry_Click);
             // 
             // btnPrcSales
             // 
@@ -141,6 +140,7 @@
             this.btnPrcSales.Text = "  Process Sales";
             this.btnPrcSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrcSales.UseVisualStyleBackColor = true;
+            this.btnPrcSales.Click += new System.EventHandler(this.btnPrcSales_Click);
             // 
             // panel2
             // 
@@ -275,6 +275,7 @@
             this.txtSearch.TabIndex = 1;
             this.txtSearch.Text = "";
             this.txtSearch.TrailingIcon = null;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // dtpFrom
             // 
@@ -291,14 +292,10 @@
             this.materialCard2.Controls.Add(this.lblDateValue);
             this.materialCard2.Controls.Add(this.lblCshValue);
             this.materialCard2.Controls.Add(this.lblPymntMthdValue);
-            this.materialCard2.Controls.Add(this.lblCustCashValue);
-            this.materialCard2.Controls.Add(this.lblChangeValue);
             this.materialCard2.Controls.Add(this.label11);
             this.materialCard2.Controls.Add(this.label10);
             this.materialCard2.Controls.Add(this.label9);
             this.materialCard2.Controls.Add(this.label8);
-            this.materialCard2.Controls.Add(this.label7);
-            this.materialCard2.Controls.Add(this.label6);
             this.materialCard2.Controls.Add(this.lblTrnsIDValue);
             this.materialCard2.Controls.Add(this.label4);
             this.materialCard2.Controls.Add(this.btnClsDetail);
@@ -312,6 +309,65 @@
             this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard2.Size = new System.Drawing.Size(1603, 563);
             this.materialCard2.TabIndex = 2;
+            // 
+            // materialListView1
+            // 
+            this.materialListView1.AutoSizeTable = false;
+            this.materialListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListView1.Depth = 0;
+            this.materialListView1.FullRowSelect = true;
+            this.materialListView1.HideSelection = false;
+            this.materialListView1.Location = new System.Drawing.Point(33, 273);
+            this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
+            this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView1.Name = "materialListView1";
+            this.materialListView1.OwnerDraw = true;
+            this.materialListView1.Size = new System.Drawing.Size(1535, 208);
+            this.materialListView1.TabIndex = 19;
+            this.materialListView1.UseCompatibleStateImageBehavior = false;
+            this.materialListView1.View = System.Windows.Forms.View.Details;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(30, 228);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 21);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Items";
+            // 
+            // lblDateValue
+            // 
+            this.lblDateValue.AutoSize = true;
+            this.lblDateValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateValue.Location = new System.Drawing.Point(80, 108);
+            this.lblDateValue.Name = "lblDateValue";
+            this.lblDateValue.Size = new System.Drawing.Size(156, 21);
+            this.lblDateValue.TabIndex = 17;
+            this.lblDateValue.Text = "2025-01-09 9:23 AM";
+            // 
+            // lblCshValue
+            // 
+            this.lblCshValue.AutoSize = true;
+            this.lblCshValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCshValue.Location = new System.Drawing.Point(100, 139);
+            this.lblCshValue.Name = "lblCshValue";
+            this.lblCshValue.Size = new System.Drawing.Size(75, 21);
+            this.lblCshValue.TabIndex = 16;
+            this.lblCshValue.Text = "John Doe";
+            // 
+            // lblPymntMthdValue
+            // 
+            this.lblPymntMthdValue.AutoSize = true;
+            this.lblPymntMthdValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPymntMthdValue.Location = new System.Drawing.Point(164, 170);
+            this.lblPymntMthdValue.Name = "lblPymntMthdValue";
+            this.lblPymntMthdValue.Size = new System.Drawing.Size(44, 21);
+            this.lblPymntMthdValue.TabIndex = 15;
+            this.lblPymntMthdValue.Text = "Cash";
             // 
             // label11
             // 
@@ -352,26 +408,6 @@
             this.label8.Size = new System.Drawing.Size(131, 21);
             this.label8.TabIndex = 9;
             this.label8.Text = "Payment Method:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(29, 204);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(123, 21);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Customer Cash: ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(29, 235);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 21);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Change: ";
             // 
             // lblTrnsIDValue
             // 
@@ -449,6 +485,7 @@
             this.lvwTrnsHistory.TabIndex = 3;
             this.lvwTrnsHistory.UseCompatibleStateImageBehavior = false;
             this.lvwTrnsHistory.View = System.Windows.Forms.View.Details;
+            this.lvwTrnsHistory.SelectedIndexChanged += new System.EventHandler(this.LvwTrnsHistory_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -459,85 +496,6 @@
             this.label3.Size = new System.Drawing.Size(200, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "Click a transaction to view details";
-            // 
-            // lblChangeValue
-            // 
-            this.lblChangeValue.AutoSize = true;
-            this.lblChangeValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChangeValue.Location = new System.Drawing.Point(90, 235);
-            this.lblChangeValue.Name = "lblChangeValue";
-            this.lblChangeValue.Size = new System.Drawing.Size(38, 21);
-            this.lblChangeValue.TabIndex = 13;
-            this.lblChangeValue.Text = "Rp0";
-            // 
-            // lblCustCashValue
-            // 
-            this.lblCustCashValue.AutoSize = true;
-            this.lblCustCashValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustCashValue.Location = new System.Drawing.Point(148, 204);
-            this.lblCustCashValue.Name = "lblCustCashValue";
-            this.lblCustCashValue.Size = new System.Drawing.Size(77, 21);
-            this.lblCustCashValue.TabIndex = 14;
-            this.lblCustCashValue.Text = "Rp70.000";
-            // 
-            // lblPymntMthdValue
-            // 
-            this.lblPymntMthdValue.AutoSize = true;
-            this.lblPymntMthdValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPymntMthdValue.Location = new System.Drawing.Point(164, 170);
-            this.lblPymntMthdValue.Name = "lblPymntMthdValue";
-            this.lblPymntMthdValue.Size = new System.Drawing.Size(44, 21);
-            this.lblPymntMthdValue.TabIndex = 15;
-            this.lblPymntMthdValue.Text = "Cash";
-            // 
-            // lblCshValue
-            // 
-            this.lblCshValue.AutoSize = true;
-            this.lblCshValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCshValue.Location = new System.Drawing.Point(100, 139);
-            this.lblCshValue.Name = "lblCshValue";
-            this.lblCshValue.Size = new System.Drawing.Size(75, 21);
-            this.lblCshValue.TabIndex = 16;
-            this.lblCshValue.Text = "John Doe";
-            // 
-            // lblDateValue
-            // 
-            this.lblDateValue.AutoSize = true;
-            this.lblDateValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateValue.Location = new System.Drawing.Point(80, 108);
-            this.lblDateValue.Name = "lblDateValue";
-            this.lblDateValue.Size = new System.Drawing.Size(156, 21);
-            this.lblDateValue.TabIndex = 17;
-            this.lblDateValue.Text = "2025-01-09 9:23 AM";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(29, 283);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 21);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Items";
-            // 
-            // materialListView1
-            // 
-            this.materialListView1.AutoSizeTable = false;
-            this.materialListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView1.Depth = 0;
-            this.materialListView1.FullRowSelect = true;
-            this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(33, 316);
-            this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
-            this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView1.Name = "materialListView1";
-            this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(1535, 165);
-            this.materialListView1.TabIndex = 19;
-            this.materialListView1.UseCompatibleStateImageBehavior = false;
-            this.materialListView1.View = System.Windows.Forms.View.Details;
             // 
             // TransactionHistoryForm
             // 
@@ -594,15 +552,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblTrnsIDValue;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblDateValue;
         private System.Windows.Forms.Label lblCshValue;
         private System.Windows.Forms.Label lblPymntMthdValue;
-        private System.Windows.Forms.Label lblCustCashValue;
-        private System.Windows.Forms.Label lblChangeValue;
         private MaterialSkin.Controls.MaterialListView materialListView1;
         private System.Windows.Forms.Label label5;
     }

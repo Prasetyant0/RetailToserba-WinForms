@@ -13,6 +13,7 @@ using RetailToserbaApps.Controllers;
 using RetailToserbaApps.Models;
 using RetailToserbaApps.Helpers;
 using RetailToserbaApps.Views.Auth;
+using RetailToserbaApps.Views.Pages;
 
 namespace RetailToserbaApps.Views.Dashboard
 {
@@ -24,7 +25,9 @@ namespace RetailToserbaApps.Views.Dashboard
         private List<CartItem> currentCart;
         private List<Barang> availableProducts;
         private int currentUserId = 1; 
-        private string currentUsername = "kasir"; 
+        private string currentUsername = ""; 
+        private bool isProcessing = false;
+        private User currentUser = null;
 
         private class CartItem
         {
@@ -44,7 +47,51 @@ namespace RetailToserbaApps.Views.Dashboard
             InitializeUI();
             LoadInitialData();
             AttachAllEventHandlers();
+            ClearTransaction();
+
+            lblCshName.Text = "Loading...";
+            lblCshId.Text = "---";
+            lblRole.Text = "---";
+
+            
+            this.Load += CashierForm_Load;
+
         }
+        private void CashierForm_Load(object sender, EventArgs e)
+        {
+            if (currentUser != null)
+            {
+                UpdateUserInterface();
+            }
+        }
+        private void UpdateUserInterface()
+        {
+            if (currentUser == null) return;
+
+            lblCshName.Text = currentUser.Nama;
+            lblCshId.Text = currentUser.Username; 
+            lblRole.Text = currentUser.Role;
+
+            
+            lblCshName.Refresh();
+            lblCshId.Refresh();
+            lblRole.Refresh();
+        }
+
+        public void SetCurrentUser(User user)
+        {
+            if (user != null)
+            {
+                currentUser = user;
+                currentUserId = user.UserId;
+                currentUsername = user.Username;
+                if (this.IsHandleCreated)
+                {
+                    UpdateUserInterface();
+                }
+            }
+        }
+        
 
         private void InitializeMaterialSkin()
         {
@@ -179,14 +226,21 @@ namespace RetailToserbaApps.Views.Dashboard
 
         private void BtnVwProduct_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("View Product feature will be available soon!", "Info",
-                           MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ViewProductForm productForm = new ViewProductForm();
+            productForm.SetCurrentUser(this.currentUser);
+            productForm.Show();
+
+            this.Hide();
         }
 
         private void BtnTrnsHstry_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Transaction History feature will be available soon!", "Info",
-                           MessageBoxButtons.OK, MessageBoxIcon.Information);
+          
+            TransactionHistoryForm historyForm = new TransactionHistoryForm();
+            historyForm.SetCurrentUser(this.currentUser);
+            
+            historyForm.Show();
+            this.Hide();
         }
 
         private void BtnLogout_Click(object sender, EventArgs e)
@@ -443,8 +497,15 @@ namespace RetailToserbaApps.Views.Dashboard
             }
         }
 
-        private void BtnProcess_Click(object sender, EventArgs e)
+        private async void BtnProcess_Click(object sender, EventArgs e)
         {
+            if (isProcessing)
+            {
+                MessageBox.Show("Sedang memproses transaksi. Harap tunggu...", "Info",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             if (currentCart.Count == 0)
             {
                 MessageBox.Show("Cart masih kosong! Tambahkan produk terlebih dahulu.",
@@ -471,16 +532,17 @@ namespace RetailToserbaApps.Views.Dashboard
                 return;
             }
             
-            ProcessPayment(grandTotal, customerCash);
+            await ProcessPayment(grandTotal, customerCash);
         }
 
-        private void ProcessPayment(long grandTotal, long customerCash)
+        private async Task ProcessPayment(long grandTotal, long customerCash)
         {
+            isProcessing = true;
+            btnProcess.Enabled = false;
+            Cursor = Cursors.WaitCursor;
+
             try
             {
-                btnProcess.Enabled = false;
-                this.Cursor = Cursors.WaitCursor;
-                
                 string invoiceNumber = cashierController.GenerateInvoiceNumber();
                 long change = customerCash - grandTotal;
                 
@@ -496,20 +558,29 @@ namespace RetailToserbaApps.Views.Dashboard
                 {
                     BarangId = c.BarangId,
                     Quantity = c.Quantity,
-                    Subtotal = c.Subtotal
+                    Subtotal = c.Subtotal,
+                    HargaSatuan = c.HargaBarang
                 }).ToList();
                 
-                cashierController.SimpanTransaksi(transaction, details, currentUsername);
-                
-                string successMessage = $"Transaksi Berhasil!\n\n" +
-                                      $"Invoice: {invoiceNumber}\n" +
-                                      $"Total: {grandTotal.ToRupiah()}\n" +
-                                      $"Bayar: {customerCash.ToRupiah()}\n" +
-                                      $"Kembalian: {change.ToRupiah()}";
-                
-                MessageBox.Show(successMessage, "Transaksi Berhasil",
-                               MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+                // run DB op in threadpool
+                await Task.Run(() => cashierController.SimpanTransaksi(transaction, details, currentUsername));
+
+                // Prepare invoice items
+                var invoiceItems = currentCart.Select((c, idx) => new InvoiceItem
+                {
+                    NamaBarang = c.NamaBarang,
+                    Harga = c.HargaBarang,
+                    Quantity = c.Quantity,
+                    Subtotal = c.Subtotal
+                }).ToList();
+
+                // Show invoice form
+                using (var invoiceForm = new InvoiceForm())
+                {
+                    invoiceForm.LoadInvoice(invoiceNumber, currentUser.Nama, DateTime.Now, invoiceItems, grandTotal, customerCash, change);
+                    invoiceForm.ShowDialog(this);
+                }
+
                 ClearTransaction();
                 LoadAvailableProducts();
                 txtSearchItem.Focus();
@@ -521,8 +592,9 @@ namespace RetailToserbaApps.Views.Dashboard
             }
             finally
             {
+                isProcessing = false;
                 btnProcess.Enabled = true;
-                this.Cursor = Cursors.Default;
+                Cursor = Cursors.Default;
             }
         }
 

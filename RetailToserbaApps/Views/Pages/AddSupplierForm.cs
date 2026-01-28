@@ -16,19 +16,13 @@ namespace RetailToserbaApps.Views.Pages
     public partial class AddSupplierForm : MaterialForm
     {
         private WarehouseController warehouseController;
-        private MaterialTextBox txtNamaSupplier;
-        private MaterialTextBox txtPerusahaan;
-        private MaterialTextBox txtAlamat;
-        private MaterialTextBox txtEmail;
-        private MaterialTextBox txtNoTelepon;
-        private MaterialButton btnSave;
-        private MaterialButton btnCancel;
+       
 
         public AddSupplierForm()
         {
             InitializeComponent();
             ConfigureMaterialSkin();
-            InitializeControls();
+            //InitializeControls();
             warehouseController = new WarehouseController();
         }
 
@@ -46,7 +40,7 @@ namespace RetailToserbaApps.Views.Pages
             );
         }
 
-        private void InitializeControls()
+        /*private void InitializeControls()
         {
             this.Text = "Add Supplier";
             this.Size = new Size(550, 600);
@@ -60,35 +54,35 @@ namespace RetailToserbaApps.Views.Pages
                 AutoSize = true
             };
 
-            txtNamaSupplier = new MaterialTextBox
+            materialTxtSuppName = new MaterialTextBox
             {
                 Location = new Point(20, 130),
                 Size = new Size(490, 50),
                 Hint = "Supplier Name"
             };
 
-            txtPerusahaan = new MaterialTextBox
+            materialTxtCompName = new MaterialTextBox
             {
                 Location = new Point(20, 190),
                 Size = new Size(490, 50),
                 Hint = "Company Name"
             };
 
-            txtAlamat = new MaterialTextBox
+            richTxtAddress = new MaterialTextBox
             {
                 Location = new Point(20, 250),
                 Size = new Size(490, 50),
                 Hint = "Address"
             };
 
-            txtEmail = new MaterialTextBox
+            materialTxtEmail = new MaterialTextBox
             {
                 Location = new Point(20, 310),
                 Size = new Size(490, 50),
                 Hint = "Email Address"
             };
 
-            txtNoTelepon = new MaterialTextBox
+            materialTxtPhone = new MaterialTextBox
             {
                 Location = new Point(20, 370),
                 Size = new Size(490, 50),
@@ -115,15 +109,15 @@ namespace RetailToserbaApps.Views.Pages
             btnCancel.Click += BtnCancel_Click;
 
             this.Controls.Add(lblTitle);
-            this.Controls.Add(txtNamaSupplier);
-            this.Controls.Add(txtPerusahaan);
-            this.Controls.Add(txtAlamat);
-            this.Controls.Add(txtEmail);
-            this.Controls.Add(txtNoTelepon);
+            this.Controls.Add(materialTxtSuppName);
+            this.Controls.Add(materialTxtCompName);
+            this.Controls.Add(richTxtAddress);
+            this.Controls.Add(materialTxtEmail);
+            this.Controls.Add(materialTxtPhone);
             this.Controls.Add(btnSave);
             this.Controls.Add(btnCancel);
         }
-
+        */
         private void BtnSave_Click(object sender, EventArgs e)
         {
             if (!ValidateInputs())
@@ -135,11 +129,11 @@ namespace RetailToserbaApps.Views.Pages
             {
                 Supplier supplier = new Supplier
                 {
-                    NamaSupplier = txtNamaSupplier.Text.Trim(),
-                    NamaPerusahaan = txtPerusahaan.Text.Trim(),
-                    Alamat = txtAlamat.Text.Trim(),
-                    Email = txtEmail.Text.Trim(),
-                    NoTelepon = txtNoTelepon.Text.Trim()
+                    NamaSupplier = materialTxtSuppName.Text.Trim(),
+                    NamaPerusahaan = materialTxtCompName.Text.Trim(),
+                    Alamat = richTxtAddress.Text.Trim(),
+                    Email = materialTxtEmail.Text.Trim(),
+                    NoTelepon = materialTxtPhone.Text.Trim()
                 };
 
                 warehouseController.InsertSupplier(supplier);
@@ -156,51 +150,51 @@ namespace RetailToserbaApps.Views.Pages
 
         private bool ValidateInputs()
         {
-            if (string.IsNullOrWhiteSpace(txtNamaSupplier.Text))
+            if (string.IsNullOrWhiteSpace(materialTxtSuppName.Text))
             {
                 MessageBox.Show("Nama supplier tidak boleh kosong!", "Validasi",
                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtNamaSupplier.Focus();
+                materialTxtSuppName.Focus();
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(txtPerusahaan.Text))
+            if (string.IsNullOrWhiteSpace(materialTxtCompName.Text))
             {
                 MessageBox.Show("Nama perusahaan tidak boleh kosong!", "Validasi",
                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtPerusahaan.Focus();
+                materialTxtCompName.Focus();
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(txtAlamat.Text))
+            if (string.IsNullOrWhiteSpace(richTxtAddress.Text))
             {
                 MessageBox.Show("Alamat tidak boleh kosong!", "Validasi",
                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtAlamat.Focus();
+                richTxtAddress.Focus();
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            if (string.IsNullOrWhiteSpace(materialTxtEmail.Text))
             {
                 MessageBox.Show("Email tidak boleh kosong!", "Validasi",
                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtEmail.Focus();
+                materialTxtEmail.Focus();
                 return false;
             }
 
-            if (!IsValidEmail(txtEmail.Text.Trim()))
+            if (!IsValidEmail(materialTxtEmail.Text.Trim()))
             {
                 MessageBox.Show("Format email tidak valid!", "Validasi",
                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtEmail.Focus();
+                materialTxtEmail.Focus();
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(txtNoTelepon.Text))
+            if (string.IsNullOrWhiteSpace(materialTxtPhone.Text))
             {
                 MessageBox.Show("Nomor telepon tidak boleh kosong!", "Validasi",
                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtNoTelepon.Focus();
+                materialTxtPhone.Focus();
                 return false;
             }
 

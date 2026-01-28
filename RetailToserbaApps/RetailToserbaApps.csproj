@@ -34,6 +34,26 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.1.66\lib\net461\Dapper.dll</HintPath>
@@ -75,7 +95,9 @@
     <Compile Include="Data\SqliteDataAccess.cs" />
     <Compile Include="Helpers\FormatHelper.cs" />
     <Compile Include="Models\Barang.cs" />
+    <Compile Include="Models\BarangView.cs" />
     <Compile Include="Models\DetailTransaksi.cs" />
+    <Compile Include="Models\InvoiceItem.cs" />
     <Compile Include="Models\Kategori.cs" />
     <Compile Include="Models\LogActivity.cs" />
     <Compile Include="Models\Supplier.cs" />
@@ -118,6 +140,12 @@
     </Compile>
     <Compile Include="Views\Pages\AddProductForm.Designer.cs">
       <DependentUpon>AddProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\AddStockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\AddStockForm.Designer.cs">
+      <DependentUpon>AddStockForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\AddSupplierForm.cs">
       <SubType>Form</SubType>
@@ -176,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Pages\AddProductForm.resx">
       <DependentUpon>AddProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Pages\AddStockForm.resx">
+      <DependentUpon>AddStockForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Pages\AddSupplierForm.resx">
       <DependentUpon>AddSupplierForm.cs</DependentUpon>

@@ -53,7 +53,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(118, 29);
+            this.label1.Location = new System.Drawing.Point(130, 29);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 32);
@@ -63,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 143);
+            this.label2.Location = new System.Drawing.Point(43, 143);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 21);
@@ -73,7 +73,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 571);
+            this.label3.Location = new System.Drawing.Point(43, 571);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 21);
@@ -82,7 +82,7 @@
             // 
             // lblDateValue
             // 
-            this.lblDateValue.Location = new System.Drawing.Point(210, 217);
+            this.lblDateValue.Location = new System.Drawing.Point(222, 217);
             this.lblDateValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateValue.Name = "lblDateValue";
             this.lblDateValue.Size = new System.Drawing.Size(183, 21);
@@ -92,7 +92,7 @@
             // 
             // lblCshName
             // 
-            this.lblCshName.Location = new System.Drawing.Point(214, 179);
+            this.lblCshName.Location = new System.Drawing.Point(226, 179);
             this.lblCshName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCshName.Name = "lblCshName";
             this.lblCshName.Size = new System.Drawing.Size(179, 21);
@@ -103,7 +103,7 @@
             // lblInvoiceValue
             // 
             this.lblInvoiceValue.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblInvoiceValue.Location = new System.Drawing.Point(218, 143);
+            this.lblInvoiceValue.Location = new System.Drawing.Point(230, 143);
             this.lblInvoiceValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInvoiceValue.Name = "lblInvoiceValue";
             this.lblInvoiceValue.Size = new System.Drawing.Size(175, 21);
@@ -114,7 +114,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 217);
+            this.label7.Location = new System.Drawing.Point(43, 217);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 21);
@@ -124,7 +124,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(31, 179);
+            this.label8.Location = new System.Drawing.Point(43, 179);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(108, 21);
@@ -135,17 +135,17 @@
             // 
             this.lvwInvoice.AutoSizeTable = false;
             this.lvwInvoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lvwInvoice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lvwInvoice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvwInvoice.Depth = 0;
             this.lvwInvoice.FullRowSelect = true;
             this.lvwInvoice.HideSelection = false;
-            this.lvwInvoice.Location = new System.Drawing.Point(35, 270);
+            this.lvwInvoice.Location = new System.Drawing.Point(23, 270);
             this.lvwInvoice.MinimumSize = new System.Drawing.Size(200, 100);
             this.lvwInvoice.MouseLocation = new System.Drawing.Point(-1, -1);
             this.lvwInvoice.MouseState = MaterialSkin.MouseState.OUT;
             this.lvwInvoice.Name = "lvwInvoice";
             this.lvwInvoice.OwnerDraw = true;
-            this.lvwInvoice.Size = new System.Drawing.Size(357, 277);
+            this.lvwInvoice.Size = new System.Drawing.Size(410, 277);
             this.lvwInvoice.TabIndex = 8;
             this.lvwInvoice.UseCompatibleStateImageBehavior = false;
             this.lvwInvoice.View = System.Windows.Forms.View.Details;
@@ -153,7 +153,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 633);
+            this.label4.Location = new System.Drawing.Point(43, 633);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 21);
@@ -163,7 +163,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 602);
+            this.label5.Location = new System.Drawing.Point(43, 602);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 21);
@@ -172,7 +172,7 @@
             // 
             // lblGrandTtlValue
             // 
-            this.lblGrandTtlValue.Location = new System.Drawing.Point(254, 571);
+            this.lblGrandTtlValue.Location = new System.Drawing.Point(266, 571);
             this.lblGrandTtlValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGrandTtlValue.Name = "lblGrandTtlValue";
             this.lblGrandTtlValue.Size = new System.Drawing.Size(139, 21);
@@ -182,7 +182,7 @@
             // 
             // lblPaidValue
             // 
-            this.lblPaidValue.Location = new System.Drawing.Point(254, 602);
+            this.lblPaidValue.Location = new System.Drawing.Point(266, 602);
             this.lblPaidValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPaidValue.Name = "lblPaidValue";
             this.lblPaidValue.Size = new System.Drawing.Size(138, 21);
@@ -192,7 +192,7 @@
             // 
             // lblChangeValue
             // 
-            this.lblChangeValue.Location = new System.Drawing.Point(254, 633);
+            this.lblChangeValue.Location = new System.Drawing.Point(266, 633);
             this.lblChangeValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChangeValue.Name = "lblChangeValue";
             this.lblChangeValue.Size = new System.Drawing.Size(138, 21);
@@ -204,7 +204,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(90, 61);
+            this.label6.Location = new System.Drawing.Point(102, 61);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(229, 17);
@@ -215,7 +215,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(71, 78);
+            this.label9.Location = new System.Drawing.Point(83, 78);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(281, 17);
@@ -226,7 +226,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(187, 95);
+            this.label10.Location = new System.Drawing.Point(199, 95);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(43, 17);
@@ -240,7 +240,7 @@
             this.btnPrint.Depth = 0;
             this.btnPrint.HighEmphasis = true;
             this.btnPrint.Icon = null;
-            this.btnPrint.Location = new System.Drawing.Point(235, 703);
+            this.btnPrint.Location = new System.Drawing.Point(247, 703);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnPrint.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnPrint.Name = "btnPrint";
@@ -259,7 +259,7 @@
             this.btnClose.Depth = 0;
             this.btnClose.HighEmphasis = true;
             this.btnClose.Icon = null;
-            this.btnClose.Location = new System.Drawing.Point(328, 703);
+            this.btnClose.Location = new System.Drawing.Point(340, 703);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnClose.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnClose.Name = "btnClose";
@@ -276,7 +276,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(425, 769);
+            this.ClientSize = new System.Drawing.Size(455, 769);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.label10);

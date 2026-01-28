@@ -17,7 +17,18 @@ namespace RetailToserbaApps.Controllers
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
-
+        public List<Barang> GetAllBarang()
+        {
+            try
+            {
+                string sql = "SELECT * FROM Barang ORDER BY BarangId DESC";
+                return SqliteDataAccess.LoadData<Barang>(sql);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Failed to load products: {ex.Message}");
+            }
+        }
         public void SimpanTransaksi(Transaksi header, List<DetailTransaksi> details, string username)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -52,8 +63,8 @@ namespace RetailToserbaApps.Controllers
 
                     foreach (var detail in details)
                     {
-                        string sqlDetail = @"INSERT INTO DetailTransaksi (TransaksiId, BarangId, Quantity, Subtotal) 
-                                            VALUES (@TransaksiId, @BarangId, @Quantity, @Subtotal)";
+                        string sqlDetail = @"INSERT INTO DetailTransaksi (TransaksiId, BarangId, Quantity, HargaSatuan, Subtotal) 
+                                            VALUES (@TransaksiId, @BarangId, @Quantity, @HargaSatuan, @Subtotal)";
 
                         var detailCommand = cnn.CreateCommand();
                         detailCommand.CommandText = sqlDetail;
@@ -62,6 +73,7 @@ namespace RetailToserbaApps.Controllers
                         AddParameter(detailCommand, "@TransaksiId", newTransaksiId);
                         AddParameter(detailCommand, "@BarangId", detail.BarangId);
                         AddParameter(detailCommand, "@Quantity", detail.Quantity);
+                        AddParameter(detailCommand, @"HargaSatuan", detail.HargaSatuan);
                         AddParameter(detailCommand, "@Subtotal", detail.Subtotal);
 
                         detailCommand.ExecuteNonQuery();
@@ -166,7 +178,7 @@ namespace RetailToserbaApps.Controllers
         {
             try
             {
-                string sql = "SELECT * FROM Barang WHERE Status = 'Available' AND StokTersedia > 0 ORDER BY NamaBarang";
+                string sql = "SELECT * FROM Barang WHERE Status = 'Active' AND StokTersedia > 0 ORDER BY NamaBarang";
                 return SqliteDataAccess.LoadData<Barang>(sql);
             }
             catch (Exception ex)
@@ -179,7 +191,7 @@ namespace RetailToserbaApps.Controllers
         {
             try
             {
-                string sql = "SELECT * FROM Barang WHERE KodeBarang = @KodeBarang AND Status = 'Available' AND StokTersedia > 0";
+                string sql = "SELECT * FROM Barang WHERE KodeBarang = @KodeBarang AND Status = 'Active' AND StokTersedia > 0";
                 var parameters = new { KodeBarang = kodeBarang };
                 List<Barang> result = SqliteDataAccess.LoadData<Barang>(sql, parameters);
                 return result.FirstOrDefault();
@@ -187,6 +199,30 @@ namespace RetailToserbaApps.Controllers
             catch (Exception ex)
             {
                 throw new Exception($"Failed to search product by code: {ex.Message}");
+            }
+        }
+        public List<Kategori> GetAllKategori()
+        {
+            try
+            {
+                string sql = "SELECT * FROM Kategori ORDER BY NamaKategori";
+                return SqliteDataAccess.LoadData<Kategori>(sql);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Failed to load categories: {ex.Message}");
+            }
+        }
+        public List<Supplier> GetAllSupplier()
+        {
+            try
+            {
+                string sql = "SELECT * FROM Supplier ORDER BY NamaSupplier";
+                return SqliteDataAccess.LoadData<Supplier>(sql);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Failed to load suppliers: {ex.Message}");
             }
         }
     }

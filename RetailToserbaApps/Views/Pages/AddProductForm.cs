@@ -178,12 +178,13 @@ namespace RetailToserbaApps.Views.Pages
                     NamaBarang = txtItemName.Text.Trim(),
                     Satuan = txtUnit.Text.Trim(),
                     HargaBarang = long.Parse(txtSellPrice.Text.Trim()),
+                    Expired = chkExpDate.Checked ? dtpExpired.Value.ToString("yyyy-MM-dd") : "-",
                     StokTersedia = int.Parse(txtQuantity.Text.Trim()),
                     StokMinimum = int.Parse(txtMinimStock.Text.Trim()),
                     KategoriId = (int)cmbCategory.SelectedValue,
                     SupplierId = (int)cmbSupplier.SelectedValue,
-                    Expired = chkExpDate.Checked ? dtpExpired.Value.ToString("yyyy-MM-dd") : "-",
-                    Status = "Available"
+                    
+                    Status = "Active"
                 };
 
                 if (isEditMode)

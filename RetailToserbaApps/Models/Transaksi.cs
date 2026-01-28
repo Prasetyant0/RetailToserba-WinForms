@@ -13,5 +13,6 @@ namespace RetailToserbaApps.Models
         public string Tanggal { get; set; }
         public long Total { get; set; }
         public int UserId { get; set; }
+        public string Status { get; set; }
     }
 }

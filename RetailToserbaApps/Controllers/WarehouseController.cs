@@ -72,7 +72,7 @@ namespace RetailToserbaApps.Controllers
                     barang.StokMinimum,
                     BrgMasukTotal = barang.StokTersedia,
                     BrgKeluarTotal = 0,
-                    Status = "Available",
+                    Status = "Active",
                     CreatedAt = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                     barang.KategoriId,
                     barang.SupplierId,

@@ -29,14 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblCshId = new System.Windows.Forms.Label();
-            this.lblCshName = new System.Windows.Forms.Label();
+            this.btnVwProduct = new System.Windows.Forms.Button();
+            this.btnTrnsHstry = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnPrcSales = new System.Windows.Forms.Button();
+            this.pictureBoxViewProd = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblRole = new System.Windows.Forms.Label();
+            this.lblCshId = new System.Windows.Forms.Label();
+            this.lblCshName = new System.Windows.Forms.Label();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.cmbSupplier = new MaterialSkin.Controls.MaterialComboBox();
-            this.cmbCategory = new MaterialSkin.Controls.MaterialComboBox();
             this.txtSearchItem = new MaterialSkin.Controls.MaterialTextBox();
+            this.cmbCategory = new MaterialSkin.Controls.MaterialComboBox();
+            this.cmbSupplier = new MaterialSkin.Controls.MaterialComboBox();
             this.lvwViewProduct = new MaterialSkin.Controls.MaterialListView();
             this.btnPrevious = new MaterialSkin.Controls.MaterialButton();
             this.btn1 = new MaterialSkin.Controls.MaterialButton();
@@ -44,15 +49,10 @@
             this.btn3 = new MaterialSkin.Controls.MaterialButton();
             this.btnNext = new MaterialSkin.Controls.MaterialButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnVwProduct = new System.Windows.Forms.Button();
-            this.btnTrnsHstry = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.btnPrcSales = new System.Windows.Forms.Button();
-            this.pictureBoxViewProd = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxViewProd)).BeginInit();
             this.panel2.SuspendLayout();
             this.materialCard1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxViewProd)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,25 +70,75 @@
             this.panel1.Size = new System.Drawing.Size(218, 1013);
             this.panel1.TabIndex = 0;
             // 
-            // lblCshId
+            // btnVwProduct
             // 
-            this.lblCshId.AutoSize = true;
-            this.lblCshId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCshId.Location = new System.Drawing.Point(78, 46);
-            this.lblCshId.Name = "lblCshId";
-            this.lblCshId.Size = new System.Drawing.Size(50, 17);
-            this.lblCshId.TabIndex = 3;
-            this.lblCshId.Text = "Cash00";
+            this.btnVwProduct.FlatAppearance.BorderSize = 0;
+            this.btnVwProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVwProduct.Image = global::RetailToserbaApps.Properties.Resources.icons8_view_32;
+            this.btnVwProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVwProduct.Location = new System.Drawing.Point(3, 161);
+            this.btnVwProduct.Name = "btnVwProduct";
+            this.btnVwProduct.Size = new System.Drawing.Size(212, 46);
+            this.btnVwProduct.TabIndex = 7;
+            this.btnVwProduct.Text = "  View Product";
+            this.btnVwProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVwProduct.UseVisualStyleBackColor = true;
+            this.btnVwProduct.Click += new System.EventHandler(this.btnVwProduct_Click);
             // 
-            // lblCshName
+            // btnTrnsHstry
             // 
-            this.lblCshName.AutoSize = true;
-            this.lblCshName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCshName.Location = new System.Drawing.Point(77, 25);
-            this.lblCshName.Name = "lblCshName";
-            this.lblCshName.Size = new System.Drawing.Size(82, 21);
-            this.lblCshName.TabIndex = 1;
-            this.lblCshName.Text = "John Doe";
+            this.btnTrnsHstry.FlatAppearance.BorderSize = 0;
+            this.btnTrnsHstry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrnsHstry.Image = global::RetailToserbaApps.Properties.Resources.icons8_history_32;
+            this.btnTrnsHstry.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTrnsHstry.Location = new System.Drawing.Point(3, 213);
+            this.btnTrnsHstry.Name = "btnTrnsHstry";
+            this.btnTrnsHstry.Size = new System.Drawing.Size(212, 46);
+            this.btnTrnsHstry.TabIndex = 6;
+            this.btnTrnsHstry.Text = "  Transaction History";
+            this.btnTrnsHstry.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTrnsHstry.UseVisualStyleBackColor = true;
+            this.btnTrnsHstry.Click += new System.EventHandler(this.btnTrnsHstry_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Image = global::RetailToserbaApps.Properties.Resources.icons8_logout_32;
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(3, 265);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(212, 46);
+            this.btnLogout.TabIndex = 5;
+            this.btnLogout.Text = "  Logout";
+            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnPrcSales
+            // 
+            this.btnPrcSales.FlatAppearance.BorderSize = 0;
+            this.btnPrcSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrcSales.Image = global::RetailToserbaApps.Properties.Resources.icons8_transaction_32;
+            this.btnPrcSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrcSales.Location = new System.Drawing.Point(3, 109);
+            this.btnPrcSales.Name = "btnPrcSales";
+            this.btnPrcSales.Size = new System.Drawing.Size(212, 46);
+            this.btnPrcSales.TabIndex = 4;
+            this.btnPrcSales.Text = "  Process Sales";
+            this.btnPrcSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrcSales.UseVisualStyleBackColor = true;
+            this.btnPrcSales.Click += new System.EventHandler(this.btnPrcSales_Click);
+            // 
+            // pictureBoxViewProd
+            // 
+            this.pictureBoxViewProd.Image = global::RetailToserbaApps.Properties.Resources.icons8_user_80;
+            this.pictureBoxViewProd.Location = new System.Drawing.Point(9, 23);
+            this.pictureBoxViewProd.Name = "pictureBoxViewProd";
+            this.pictureBoxViewProd.Size = new System.Drawing.Size(60, 60);
+            this.pictureBoxViewProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxViewProd.TabIndex = 0;
+            this.pictureBoxViewProd.TabStop = false;
             // 
             // panel2
             // 
@@ -110,6 +160,26 @@
             this.lblRole.TabIndex = 2;
             this.lblRole.Text = "Cashier";
             // 
+            // lblCshId
+            // 
+            this.lblCshId.AutoSize = true;
+            this.lblCshId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCshId.Location = new System.Drawing.Point(78, 46);
+            this.lblCshId.Name = "lblCshId";
+            this.lblCshId.Size = new System.Drawing.Size(50, 17);
+            this.lblCshId.TabIndex = 3;
+            this.lblCshId.Text = "Cash00";
+            // 
+            // lblCshName
+            // 
+            this.lblCshName.AutoSize = true;
+            this.lblCshName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCshName.Location = new System.Drawing.Point(77, 25);
+            this.lblCshName.Name = "lblCshName";
+            this.lblCshName.Size = new System.Drawing.Size(82, 21);
+            this.lblCshName.TabIndex = 1;
+            this.lblCshName.Text = "John Doe";
+            // 
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -126,27 +196,23 @@
             this.materialCard1.Size = new System.Drawing.Size(1606, 92);
             this.materialCard1.TabIndex = 1;
             // 
-            // cmbSupplier
+            // txtSearchItem
             // 
-            this.cmbSupplier.AutoResize = false;
-            this.cmbSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbSupplier.Depth = 0;
-            this.cmbSupplier.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cmbSupplier.DropDownHeight = 174;
-            this.cmbSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSupplier.DropDownWidth = 121;
-            this.cmbSupplier.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmbSupplier.FormattingEnabled = true;
-            this.cmbSupplier.IntegralHeight = false;
-            this.cmbSupplier.ItemHeight = 43;
-            this.cmbSupplier.Location = new System.Drawing.Point(1368, 25);
-            this.cmbSupplier.MaxDropDownItems = 4;
-            this.cmbSupplier.MouseState = MaterialSkin.MouseState.OUT;
-            this.cmbSupplier.Name = "cmbSupplier";
-            this.cmbSupplier.Size = new System.Drawing.Size(194, 49);
-            this.cmbSupplier.StartIndex = 0;
-            this.cmbSupplier.TabIndex = 1;
+            this.txtSearchItem.AnimateReadOnly = false;
+            this.txtSearchItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearchItem.Depth = 0;
+            this.txtSearchItem.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSearchItem.LeadingIcon = null;
+            this.txtSearchItem.Location = new System.Drawing.Point(32, 25);
+            this.txtSearchItem.MaxLength = 50;
+            this.txtSearchItem.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtSearchItem.Multiline = false;
+            this.txtSearchItem.Name = "txtSearchItem";
+            this.txtSearchItem.Size = new System.Drawing.Size(838, 50);
+            this.txtSearchItem.TabIndex = 3;
+            this.txtSearchItem.Text = "";
+            this.txtSearchItem.TrailingIcon = null;
+            this.txtSearchItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSearchItem_KeyDown);
             // 
             // cmbCategory
             // 
@@ -170,22 +236,27 @@
             this.cmbCategory.StartIndex = 0;
             this.cmbCategory.TabIndex = 2;
             // 
-            // txtSearchItem
+            // cmbSupplier
             // 
-            this.txtSearchItem.AnimateReadOnly = false;
-            this.txtSearchItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearchItem.Depth = 0;
-            this.txtSearchItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchItem.LeadingIcon = null;
-            this.txtSearchItem.Location = new System.Drawing.Point(32, 25);
-            this.txtSearchItem.MaxLength = 50;
-            this.txtSearchItem.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtSearchItem.Multiline = false;
-            this.txtSearchItem.Name = "txtSearchItem";
-            this.txtSearchItem.Size = new System.Drawing.Size(838, 50);
-            this.txtSearchItem.TabIndex = 3;
-            this.txtSearchItem.Text = "";
-            this.txtSearchItem.TrailingIcon = null;
+            this.cmbSupplier.AutoResize = false;
+            this.cmbSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbSupplier.Depth = 0;
+            this.cmbSupplier.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbSupplier.DropDownHeight = 174;
+            this.cmbSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSupplier.DropDownWidth = 121;
+            this.cmbSupplier.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbSupplier.FormattingEnabled = true;
+            this.cmbSupplier.IntegralHeight = false;
+            this.cmbSupplier.ItemHeight = 43;
+            this.cmbSupplier.Location = new System.Drawing.Point(1368, 25);
+            this.cmbSupplier.MaxDropDownItems = 4;
+            this.cmbSupplier.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbSupplier.Name = "cmbSupplier";
+            this.cmbSupplier.Size = new System.Drawing.Size(194, 49);
+            this.cmbSupplier.StartIndex = 0;
+            this.cmbSupplier.TabIndex = 1;
             // 
             // lvwViewProduct
             // 
@@ -311,72 +382,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Showing 1 to 5 of 50 entries";
             // 
-            // btnVwProduct
-            // 
-            this.btnVwProduct.FlatAppearance.BorderSize = 0;
-            this.btnVwProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVwProduct.Image = global::RetailToserbaApps.Properties.Resources.icons8_view_32;
-            this.btnVwProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVwProduct.Location = new System.Drawing.Point(3, 161);
-            this.btnVwProduct.Name = "btnVwProduct";
-            this.btnVwProduct.Size = new System.Drawing.Size(212, 46);
-            this.btnVwProduct.TabIndex = 7;
-            this.btnVwProduct.Text = "  View Product";
-            this.btnVwProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVwProduct.UseVisualStyleBackColor = true;
-            // 
-            // btnTrnsHstry
-            // 
-            this.btnTrnsHstry.FlatAppearance.BorderSize = 0;
-            this.btnTrnsHstry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrnsHstry.Image = global::RetailToserbaApps.Properties.Resources.icons8_history_32;
-            this.btnTrnsHstry.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTrnsHstry.Location = new System.Drawing.Point(3, 213);
-            this.btnTrnsHstry.Name = "btnTrnsHstry";
-            this.btnTrnsHstry.Size = new System.Drawing.Size(212, 46);
-            this.btnTrnsHstry.TabIndex = 6;
-            this.btnTrnsHstry.Text = "  Transaction History";
-            this.btnTrnsHstry.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTrnsHstry.UseVisualStyleBackColor = true;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Image = global::RetailToserbaApps.Properties.Resources.icons8_logout_32;
-            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(3, 265);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(212, 46);
-            this.btnLogout.TabIndex = 5;
-            this.btnLogout.Text = "  Logout";
-            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLogout.UseVisualStyleBackColor = true;
-            // 
-            // btnPrcSales
-            // 
-            this.btnPrcSales.FlatAppearance.BorderSize = 0;
-            this.btnPrcSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrcSales.Image = global::RetailToserbaApps.Properties.Resources.icons8_transaction_32;
-            this.btnPrcSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrcSales.Location = new System.Drawing.Point(3, 109);
-            this.btnPrcSales.Name = "btnPrcSales";
-            this.btnPrcSales.Size = new System.Drawing.Size(212, 46);
-            this.btnPrcSales.TabIndex = 4;
-            this.btnPrcSales.Text = "  Process Sales";
-            this.btnPrcSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPrcSales.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxViewProd
-            // 
-            this.pictureBoxViewProd.Image = global::RetailToserbaApps.Properties.Resources.icons8_user_80;
-            this.pictureBoxViewProd.Location = new System.Drawing.Point(9, 23);
-            this.pictureBoxViewProd.Name = "pictureBoxViewProd";
-            this.pictureBoxViewProd.Size = new System.Drawing.Size(60, 60);
-            this.pictureBoxViewProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxViewProd.TabIndex = 0;
-            this.pictureBoxViewProd.TabStop = false;
-            // 
             // ViewProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -396,10 +401,10 @@
             this.Name = "ViewProductForm";
             this.Text = "View Products";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxViewProd)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.materialCard1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxViewProd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

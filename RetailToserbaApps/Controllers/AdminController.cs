@@ -22,7 +22,18 @@ namespace RetailToserbaApps.Controllers
                 throw new Exception($"Failed to load users: {ex.Message}");
             }
         }
-
+        public async Task<List<User>> GetAllUsersAsync()
+        {
+            try
+            {
+                string sql = "SELECT * FROM Users ORDER BY UserId DESC";
+                return await SqliteDataAccess.LoadDataAsync<User>(sql);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Failed to load users: {ex.Message}");
+            }
+        }
         public List<User> SearchUsers(string searchTerm)
         {
             try
@@ -77,6 +88,7 @@ namespace RetailToserbaApps.Controllers
                 throw new Exception($"Failed to insert user: {ex.Message}");
             }
         }
+       
 
         public void UpdateUser(User user)
         {
@@ -161,8 +173,8 @@ namespace RetailToserbaApps.Controllers
                     ? new { Username = username, UserId = excludeUserId.Value }
                     : (object)new { Username = username };
 
-                var count = SqliteDataAccess.LoadData<int>(sql, parameters).FirstOrDefault();
-                return count > 0;
+                var count =  SqliteDataAccess.LoadData<int>(sql, parameters);
+                return count.FirstOrDefault() > 0;
             }
             catch (Exception ex)
             {
@@ -263,5 +275,6 @@ namespace RetailToserbaApps.Controllers
                 throw new Exception($"Failed to load dashboard statistics: {ex.Message}");
             }
         }
+        
     }
 }

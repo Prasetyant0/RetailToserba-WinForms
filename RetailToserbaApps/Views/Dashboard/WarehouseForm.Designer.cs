@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WarehouseForm));
-            this.tabContWh = new MaterialSkin.Controls.MaterialTabControl();
+            this.TabContWh = new MaterialSkin.Controls.MaterialTabControl();
             this.tabDashboard = new System.Windows.Forms.TabPage();
             this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
@@ -56,22 +56,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblWhDashboard = new System.Windows.Forms.Label();
             this.tabSupplers = new System.Windows.Forms.TabPage();
-            this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
+            this.btnNewSuppl = new MaterialSkin.Controls.MaterialButton();
             this.lvwSupplier = new MaterialSkin.Controls.MaterialListView();
             this.cmbCityRegion = new MaterialSkin.Controls.MaterialComboBox();
             this.txtSearchSupplier = new MaterialSkin.Controls.MaterialTextBox();
             this.lblSupplier = new System.Windows.Forms.Label();
             this.tabCategories = new System.Windows.Forms.TabPage();
-            this.materialButton7 = new MaterialSkin.Controls.MaterialButton();
+            this.btnAddCategory = new MaterialSkin.Controls.MaterialButton();
             this.materialListView2 = new MaterialSkin.Controls.MaterialListView();
             this.lblProd = new System.Windows.Forms.Label();
             this.tabStockIn = new System.Windows.Forms.TabPage();
             this.materialListView3 = new MaterialSkin.Controls.MaterialListView();
             this.lblStockHistory = new System.Windows.Forms.Label();
-            this.materialButton8 = new MaterialSkin.Controls.MaterialButton();
+            this.btnNewStock = new MaterialSkin.Controls.MaterialButton();
             this.tabLogout = new System.Windows.Forms.TabPage();
             this.imageListWh = new System.Windows.Forms.ImageList(this.components);
-            this.tabContWh.SuspendLayout();
+            this.TabContWh.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.materialCard3.SuspendLayout();
@@ -82,23 +82,24 @@
             this.tabStockIn.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabContWh
+            // TabContWh
             // 
-            this.tabContWh.Controls.Add(this.tabDashboard);
-            this.tabContWh.Controls.Add(this.tabSupplers);
-            this.tabContWh.Controls.Add(this.tabCategories);
-            this.tabContWh.Controls.Add(this.tabStockIn);
-            this.tabContWh.Controls.Add(this.tabLogout);
-            this.tabContWh.Depth = 0;
-            this.tabContWh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabContWh.ImageList = this.imageListWh;
-            this.tabContWh.Location = new System.Drawing.Point(3, 64);
-            this.tabContWh.MouseState = MaterialSkin.MouseState.HOVER;
-            this.tabContWh.Multiline = true;
-            this.tabContWh.Name = "tabContWh";
-            this.tabContWh.SelectedIndex = 0;
-            this.tabContWh.Size = new System.Drawing.Size(1914, 1013);
-            this.tabContWh.TabIndex = 0;
+            this.TabContWh.Controls.Add(this.tabDashboard);
+            this.TabContWh.Controls.Add(this.tabSupplers);
+            this.TabContWh.Controls.Add(this.tabCategories);
+            this.TabContWh.Controls.Add(this.tabStockIn);
+            this.TabContWh.Controls.Add(this.tabLogout);
+            this.TabContWh.Depth = 0;
+            this.TabContWh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabContWh.ImageList = this.imageListWh;
+            this.TabContWh.Location = new System.Drawing.Point(3, 64);
+            this.TabContWh.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TabContWh.Multiline = true;
+            this.TabContWh.Name = "TabContWh";
+            this.TabContWh.SelectedIndex = 0;
+            this.TabContWh.Size = new System.Drawing.Size(1914, 1013);
+            this.TabContWh.TabIndex = 0;
+            this.TabContWh.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.TabCntWh_Selecting);
             // 
             // tabDashboard
             // 
@@ -440,7 +441,7 @@
             // 
             // tabSupplers
             // 
-            this.tabSupplers.Controls.Add(this.materialButton6);
+            this.tabSupplers.Controls.Add(this.btnNewSuppl);
             this.tabSupplers.Controls.Add(this.lvwSupplier);
             this.tabSupplers.Controls.Add(this.cmbCityRegion);
             this.tabSupplers.Controls.Add(this.txtSearchSupplier);
@@ -449,29 +450,30 @@
             this.tabSupplers.Location = new System.Drawing.Point(4, 39);
             this.tabSupplers.Name = "tabSupplers";
             this.tabSupplers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSupplers.Size = new System.Drawing.Size(1542, 774);
+            this.tabSupplers.Size = new System.Drawing.Size(1906, 970);
             this.tabSupplers.TabIndex = 1;
             this.tabSupplers.Text = "Suppliers";
             this.tabSupplers.UseVisualStyleBackColor = true;
             // 
-            // materialButton6
+            // btnNewSuppl
             // 
-            this.materialButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton6.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton6.Depth = 0;
-            this.materialButton6.HighEmphasis = true;
-            this.materialButton6.Icon = null;
-            this.materialButton6.Location = new System.Drawing.Point(1582, 53);
-            this.materialButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton6.Name = "materialButton6";
-            this.materialButton6.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton6.Size = new System.Drawing.Size(157, 36);
-            this.materialButton6.TabIndex = 4;
-            this.materialButton6.Text = "Add New Supplier";
-            this.materialButton6.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton6.UseAccentColor = false;
-            this.materialButton6.UseVisualStyleBackColor = true;
+            this.btnNewSuppl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNewSuppl.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnNewSuppl.Depth = 0;
+            this.btnNewSuppl.HighEmphasis = true;
+            this.btnNewSuppl.Icon = null;
+            this.btnNewSuppl.Location = new System.Drawing.Point(1582, 53);
+            this.btnNewSuppl.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnNewSuppl.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnNewSuppl.Name = "btnNewSuppl";
+            this.btnNewSuppl.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnNewSuppl.Size = new System.Drawing.Size(157, 36);
+            this.btnNewSuppl.TabIndex = 4;
+            this.btnNewSuppl.Text = "Add New Supplier";
+            this.btnNewSuppl.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnNewSuppl.UseAccentColor = false;
+            this.btnNewSuppl.UseVisualStyleBackColor = true;
+            this.btnNewSuppl.Click += new System.EventHandler(this.BtnAddSupplier_Click);
             // 
             // lvwSupplier
             // 
@@ -501,7 +503,7 @@
             this.cmbCityRegion.DropDownHeight = 174;
             this.cmbCityRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCityRegion.DropDownWidth = 121;
-            this.cmbCityRegion.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbCityRegion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmbCityRegion.ForeColor = System.Drawing.Color.White;
             this.cmbCityRegion.FormattingEnabled = true;
             this.cmbCityRegion.IntegralHeight = false;
@@ -542,7 +544,7 @@
             // 
             // tabCategories
             // 
-            this.tabCategories.Controls.Add(this.materialButton7);
+            this.tabCategories.Controls.Add(this.btnAddCategory);
             this.tabCategories.Controls.Add(this.materialListView2);
             this.tabCategories.Controls.Add(this.lblProd);
             this.tabCategories.ImageKey = "icons8-categories-32.png";
@@ -553,24 +555,25 @@
             this.tabCategories.Text = "Categories";
             this.tabCategories.UseVisualStyleBackColor = true;
             // 
-            // materialButton7
+            // btnAddCategory
             // 
-            this.materialButton7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton7.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton7.Depth = 0;
-            this.materialButton7.HighEmphasis = true;
-            this.materialButton7.Icon = null;
-            this.materialButton7.Location = new System.Drawing.Point(1611, 42);
-            this.materialButton7.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton7.Name = "materialButton7";
-            this.materialButton7.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton7.Size = new System.Drawing.Size(129, 36);
-            this.materialButton7.TabIndex = 2;
-            this.materialButton7.Text = "Add Category";
-            this.materialButton7.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton7.UseAccentColor = false;
-            this.materialButton7.UseVisualStyleBackColor = true;
+            this.btnAddCategory.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAddCategory.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnAddCategory.Depth = 0;
+            this.btnAddCategory.HighEmphasis = true;
+            this.btnAddCategory.Icon = null;
+            this.btnAddCategory.Location = new System.Drawing.Point(1611, 42);
+            this.btnAddCategory.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAddCategory.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAddCategory.Name = "btnAddCategory";
+            this.btnAddCategory.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnAddCategory.Size = new System.Drawing.Size(129, 36);
+            this.btnAddCategory.TabIndex = 2;
+            this.btnAddCategory.Text = "Add Category";
+            this.btnAddCategory.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnAddCategory.UseAccentColor = false;
+            this.btnAddCategory.UseVisualStyleBackColor = true;
+            this.btnAddCategory.Click += new System.EventHandler(this.BtnAddCategory_Click);
             // 
             // materialListView2
             // 
@@ -604,11 +607,11 @@
             // 
             this.tabStockIn.Controls.Add(this.materialListView3);
             this.tabStockIn.Controls.Add(this.lblStockHistory);
-            this.tabStockIn.Controls.Add(this.materialButton8);
+            this.tabStockIn.Controls.Add(this.btnNewStock);
             this.tabStockIn.ImageKey = "stock.png";
             this.tabStockIn.Location = new System.Drawing.Point(4, 39);
             this.tabStockIn.Name = "tabStockIn";
-            this.tabStockIn.Size = new System.Drawing.Size(1542, 774);
+            this.tabStockIn.Size = new System.Drawing.Size(1906, 970);
             this.tabStockIn.TabIndex = 3;
             this.tabStockIn.Text = "Stock In";
             this.tabStockIn.UseVisualStyleBackColor = true;
@@ -631,6 +634,7 @@
             this.materialListView3.TabIndex = 2;
             this.materialListView3.UseCompatibleStateImageBehavior = false;
             this.materialListView3.View = System.Windows.Forms.View.Details;
+            this.materialListView3.SelectedIndexChanged += new System.EventHandler(this.LvwStock_SelectedIndexChanged);
             // 
             // lblStockHistory
             // 
@@ -641,31 +645,32 @@
             this.lblStockHistory.TabIndex = 1;
             this.lblStockHistory.Text = "Stock In History";
             // 
-            // materialButton8
+            // btnNewStock
             // 
-            this.materialButton8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton8.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton8.Depth = 0;
-            this.materialButton8.HighEmphasis = true;
-            this.materialButton8.Icon = null;
-            this.materialButton8.Location = new System.Drawing.Point(1618, 42);
-            this.materialButton8.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton8.Name = "materialButton8";
-            this.materialButton8.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton8.Size = new System.Drawing.Size(122, 36);
-            this.materialButton8.TabIndex = 0;
-            this.materialButton8.Text = "New Stock In";
-            this.materialButton8.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton8.UseAccentColor = false;
-            this.materialButton8.UseVisualStyleBackColor = true;
+            this.btnNewStock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNewStock.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnNewStock.Depth = 0;
+            this.btnNewStock.HighEmphasis = true;
+            this.btnNewStock.Icon = null;
+            this.btnNewStock.Location = new System.Drawing.Point(1618, 42);
+            this.btnNewStock.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnNewStock.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnNewStock.Name = "btnNewStock";
+            this.btnNewStock.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnNewStock.Size = new System.Drawing.Size(122, 36);
+            this.btnNewStock.TabIndex = 0;
+            this.btnNewStock.Text = "New Stock In";
+            this.btnNewStock.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnNewStock.UseAccentColor = false;
+            this.btnNewStock.UseVisualStyleBackColor = true;
+            this.btnNewStock.Click += new System.EventHandler(this.btnNewStock_Click);
             // 
             // tabLogout
             // 
             this.tabLogout.ImageKey = "icons8-logout-32.png";
             this.tabLogout.Location = new System.Drawing.Point(4, 39);
             this.tabLogout.Name = "tabLogout";
-            this.tabLogout.Size = new System.Drawing.Size(1542, 774);
+            this.tabLogout.Size = new System.Drawing.Size(1906, 970);
             this.tabLogout.TabIndex = 4;
             this.tabLogout.Text = "Logout";
             this.tabLogout.UseVisualStyleBackColor = true;
@@ -685,13 +690,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
-            this.Controls.Add(this.tabContWh);
+            this.Controls.Add(this.TabContWh);
             this.DrawerShowIconsWhenHidden = true;
-            this.DrawerTabControl = this.tabContWh;
+            this.DrawerTabControl = this.TabContWh;
             this.Name = "WarehouseForm";
             this.Text = "Warehouse";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.tabContWh.ResumeLayout(false);
+            this.TabContWh.ResumeLayout(false);
             this.tabDashboard.ResumeLayout(false);
             this.tabDashboard.PerformLayout();
             this.materialCard2.ResumeLayout(false);
@@ -714,7 +719,7 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTabControl tabContWh;
+        private MaterialSkin.Controls.MaterialTabControl TabContWh;
         private System.Windows.Forms.TabPage tabDashboard;
         private System.Windows.Forms.TabPage tabSupplers;
         private System.Windows.Forms.ImageList imageListWh;
@@ -748,12 +753,12 @@
         private MaterialSkin.Controls.MaterialComboBox cmbCityRegion;
         private MaterialSkin.Controls.MaterialTextBox txtSearchSupplier;
         private MaterialSkin.Controls.MaterialListView lvwSupplier;
-        private MaterialSkin.Controls.MaterialButton materialButton6;
+        private MaterialSkin.Controls.MaterialButton btnNewSuppl;
         private System.Windows.Forms.Label lblProd;
-        private MaterialSkin.Controls.MaterialButton materialButton7;
+        private MaterialSkin.Controls.MaterialButton btnAddCategory;
         private MaterialSkin.Controls.MaterialListView materialListView2;
         private System.Windows.Forms.Label lblStockHistory;
-        private MaterialSkin.Controls.MaterialButton materialButton8;
+        private MaterialSkin.Controls.MaterialButton btnNewStock;
         private MaterialSkin.Controls.MaterialListView materialListView3;
     }
 }

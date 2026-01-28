@@ -16,16 +16,15 @@ namespace RetailToserbaApps.Views.Pages
     public partial class AddCategoryForm : MaterialForm
     {
         private WarehouseController warehouseController;
-        private MaterialTextBox txtNamaKategori;
-        private MaterialTextBox txtDeskripsi;
-        private MaterialButton btnSave;
-        private MaterialButton btnCancel;
+        
+        //private List<>
+        
 
         public AddCategoryForm()
         {
             InitializeComponent();
             ConfigureMaterialSkin();
-            InitializeControls();
+            //InitializeControls();
             warehouseController = new WarehouseController();
         }
 
@@ -43,7 +42,7 @@ namespace RetailToserbaApps.Views.Pages
             );
         }
 
-        private void InitializeControls()
+       /* private void InitializeControls()
         {
             this.Text = "Add Category";
             this.Size = new Size(500, 400);
@@ -57,7 +56,7 @@ namespace RetailToserbaApps.Views.Pages
                 AutoSize = true
             };
 
-            txtNamaKategori = new MaterialTextBox
+            materialNmKategori = new MaterialTextBox
             {
                 Location = new Point(20, 130),
                 Size = new Size(440, 50),
@@ -91,12 +90,12 @@ namespace RetailToserbaApps.Views.Pages
             btnCancel.Click += BtnCancel_Click;
 
             this.Controls.Add(lblTitle);
-            this.Controls.Add(txtNamaKategori);
+            this.Controls.Add(materialNmKategori);
             this.Controls.Add(txtDeskripsi);
             this.Controls.Add(btnSave);
             this.Controls.Add(btnCancel);
         }
-
+       */
         private void BtnSave_Click(object sender, EventArgs e)
         {
             if (!ValidateInputs())
@@ -108,8 +107,8 @@ namespace RetailToserbaApps.Views.Pages
             {
                 Kategori kategori = new Kategori
                 {
-                    NamaKategori = txtNamaKategori.Text.Trim(),
-                    Deskripsi = string.IsNullOrWhiteSpace(txtDeskripsi.Text) ? "-" : txtDeskripsi.Text.Trim()
+                    NamaKategori = materialNmKategori.Text.Trim(),
+                    Deskripsi = string.IsNullOrWhiteSpace(richTxtDeskripsi.Text) ? "-" : richTxtDeskripsi.Text.Trim()
                 };
 
                 warehouseController.InsertKategori(kategori);
@@ -126,19 +125,19 @@ namespace RetailToserbaApps.Views.Pages
 
         private bool ValidateInputs()
         {
-            if (string.IsNullOrWhiteSpace(txtNamaKategori.Text))
+            if (string.IsNullOrWhiteSpace(materialNmKategori.Text))
             {
                 MessageBox.Show("Nama kategori tidak boleh kosong!", "Validasi",
                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtNamaKategori.Focus();
+                materialNmKategori.Focus();
                 return false;
             }
 
-            if (txtNamaKategori.Text.Trim().Length < 3)
+            if (materialNmKategori.Text.Trim().Length < 3)
             {
                 MessageBox.Show("Nama kategori minimal 3 karakter!", "Validasi",
                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtNamaKategori.Focus();
+                materialNmKategori.Focus();
                 return false;
             }
 
